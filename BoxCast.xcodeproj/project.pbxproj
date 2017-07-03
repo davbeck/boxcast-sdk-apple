@@ -505,7 +505,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ ! -x /usr/local/bin/carthage ]; then\necho \"Carthage is not installed. Install Carthage using Homebrew.\"\nexit 1\nfi\n\nif [ ! -d \"${SRCROOT}/Carthage/Checkouts\" ]; then\necho \"Checking out Carthage dependencies\"\nenv -i /usr/local/bin/carthage checkout\nfi\n\nif [ ! -d \"${SRCROOT}/Carthage/Build\" ]; then\necho \"Building Carthage dependencies\"\nenv -i PLATFORM_NAME=$PLATFORM_NAME /usr/local/bin/carthage build\nfi";
+			shellScript = "if [ ! -x /usr/local/bin/carthage ]; then\necho \"Carthage is not installed. Install Carthage using Homebrew.\"\nexit 1\nfi\n\nif [ ! -d \"${SRCROOT}/Carthage/Checkouts\" ]; then\necho \"Checking out Carthage dependencies\"\nenv -i /usr/local/bin/carthage checkout\nfi\n\nif [ ! -d \"${SRCROOT}/Carthage/Build/iOS\" ]; then\necho \"Building Carthage dependencies\"\nenv -i PLATFORM_NAME=$PLATFORM_NAME /usr/local/bin/carthage build --platform ios\nfi";
 		};
 		41C5C9221ECC802A00EFD295 /* Copy Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -534,7 +534,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ ! -x /usr/local/bin/carthage ]; then\necho \"Carthage is not installed. Install Carthage using Homebrew.\"\nexit 1\nfi\n\nif [ ! -d \"${SRCROOT}/Carthage/Checkouts\" ]; then\necho \"Checking out Carthage dependencies\"\nenv -i /usr/local/bin/carthage checkout\nfi\n\nif [ ! -d \"${SRCROOT}/Carthage/Build\" ]; then\necho \"Building Carthage dependencies\"\nenv -i PLATFORM_NAME=$PLATFORM_NAME /usr/local/bin/carthage build\nfi";
+			shellScript = "if [ ! -x /usr/local/bin/carthage ]; then\necho \"Carthage is not installed. Install Carthage using Homebrew.\"\nexit 1\nfi\n\nif [ ! -d \"${SRCROOT}/Carthage/Checkouts\" ]; then\necho \"Checking out Carthage dependencies\"\nenv -i /usr/local/bin/carthage checkout\nfi\n\nif [ ! -d \"${SRCROOT}/Carthage/Build/Mac\" ]; then\necho \"Building Carthage dependencies\"\nenv -i PLATFORM_NAME=$PLATFORM_NAME /usr/local/bin/carthage build --platform mac\nfi";
 		};
 		41FB6D341EC789A900C9EC8C /* Copy Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
