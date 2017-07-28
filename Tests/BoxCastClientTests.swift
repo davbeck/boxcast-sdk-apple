@@ -40,8 +40,11 @@ class BoxCastClientTests: XCTestCase {
                 "\"id\":\"1\"," +
                 "\"name\": \"Test\"," +
                 "\"description\":\"A test broadcast.\"," +
+                "\"account_id\":\"1\"," +
                 "\"channel_id\":\"1\"," +
-                "\"preview\": \"https://api.boxcast.com/thumbnail.jpg\"" +
+                "\"preview\": \"https://api.boxcast.com/thumbnail.jpg\"," +
+                "\"starts_at\": \"2017-07-28T22:00:00Z\"," +
+                "\"stops_at\": \"2017-07-28T23:00:00Z\"" +
             "}]"
             ).data(using: .utf8)
         MockedURLProtocol.mockedData = data
@@ -64,8 +67,11 @@ class BoxCastClientTests: XCTestCase {
                 "\"id\":\"1\"," +
                 "\"name\": \"Test\"," +
                 "\"description\":\"A test broadcast.\"," +
+                "\"account_id\":\"1\"," +
                 "\"channel_id\":\"1\"," +
-                "\"preview\": \"https://api.boxcast.com/thumbnail.jpg\"" +
+                "\"preview\": \"https://api.boxcast.com/thumbnail.jpg\"," +
+                "\"starts_at\": \"2017-07-28T22:00:00Z\"," +
+                "\"stops_at\": \"2017-07-28T23:00:00Z\"" +
             "}]"
             ).data(using: .utf8)
         MockedURLProtocol.mockedData = data
@@ -83,6 +89,9 @@ class BoxCastClientTests: XCTestCase {
     }
     
     func testGetBroadcast() {
+        let formatter = BoxCastDateFormatter()
+        let startDate = formatter.date(from: "2017-07-28T22:00:00Z")!
+        let stopDate = formatter.date(from: "2017-07-28T23:00:00Z")!
         let data = (
             "{" +
                 "\"id\":\"1\"," +
@@ -90,7 +99,9 @@ class BoxCastClientTests: XCTestCase {
                 "\"description\":\"A test broadcast.\"," +
                 "\"account_id\":\"1\"," +
                 "\"channel_id\":\"1\"," +
-                "\"preview\": \"https://api.boxcast.com/thumbnail.jpg\"" +
+                "\"preview\": \"https://api.boxcast.com/thumbnail.jpg\"," +
+                "\"starts_at\": \"2017-07-28T22:00:00Z\"," +
+                "\"stops_at\": \"2017-07-28T23:00:00Z\"" +
             "}"
             ).data(using: .utf8)
         MockedURLProtocol.mockedData = data
@@ -109,6 +120,8 @@ class BoxCastClientTests: XCTestCase {
             XCTAssertEqual(broadcast?.name, "Test")
             XCTAssertEqual(broadcast?.description, "A test broadcast.")
             XCTAssertEqual(broadcast?.thumbnailURL, URL(string: "https://api.boxcast.com/thumbnail.jpg")!)
+            XCTAssertTrue(broadcast?.startDate.compare(startDate) == .orderedSame)
+            XCTAssertTrue(broadcast?.stopDate.compare(stopDate) == .orderedSame)
         }
     }
     

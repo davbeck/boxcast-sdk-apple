@@ -27,14 +27,21 @@ public struct Broadcast {
     /// The channel's unique identifier that includes this broadcast.
     public let channelId: String
     
+    /// The start date of the broadcast.
+    public let startDate: Date
+    
+    /// The stop date of the broadcast.
+    public let stopDate: Date
+    
     let accountId: String?
     
-    init(id: String, name: String, description: String, thumbnailURL: URL, channelId: String,
-         accountId: String?=nil) {
+    init(id: String, name: String, description: String, thumbnailURL: URL, startDate: Date, stopDate: Date, channelId: String, accountId: String?=nil) {
         self.id = id
         self.name = name
         self.description = description
         self.thumbnailURL = thumbnailURL
+        self.startDate = startDate
+        self.stopDate = stopDate
         self.channelId = channelId
         self.accountId = accountId
     }
@@ -47,11 +54,18 @@ public struct Broadcast {
             let id = dict["id"] as? String,
             let name = dict["name"] as? String,
             let description = dict["description"] as? String,
-            let thumbnailURLString = dict["preview"] as? String else {
+            let thumbnailURLString = dict["preview"] as? String,
+            let startDateString = dict["starts_at"] as? String,
+            let stopDateString = dict["stops_at"] as? String else {
                 throw BoxCastError.serializationError
         }
         guard let thumbnailURL = URL(string: thumbnailURLString) else {
             throw BoxCastError.serializationError
+        }
+        guard
+            let startDate = _BoxCastDateFormatter.date(from: startDateString),
+            let stopDate = _BoxCastDateFormatter.date(from: stopDateString) else {
+                throw BoxCastError.serializationError
         }
         self.id = id
         self.accountId = dict["account_id"] as? String
@@ -59,6 +73,8 @@ public struct Broadcast {
         self.name = name
         self.description = description
         self.thumbnailURL = thumbnailURL
+        self.startDate = startDate
+        self.stopDate = stopDate
     }
     
 }
