@@ -65,7 +65,8 @@ class MetricsTests: XCTestCase {
         let mc = MetricsConsumer(broadcast: broadcast, broadcastView: broadcastView,
                                  manager: manager)
         let metric = Metric(action: .play, time: CMTime(seconds: 5, preferredTimescale: 60),
-                            totalTime: CMTime(seconds: 10, preferredTimescale: 60))
+                            totalTime: CMTime(seconds: 10, preferredTimescale: 60),
+                            videoHeight: 720)
         mc.consume(metric: metric)
         
         waitForExpectations(timeout: 5) { error in
@@ -85,6 +86,7 @@ class MetricsTests: XCTestCase {
                     XCTAssertNotNil(dict["timestamp"] as? String)
                     XCTAssertNotNil(dict["view_id"] as? String)
                     XCTAssertNotNil(dict["viewer_id"] as? String)
+                    XCTAssertEqual(dict["videoHeight"] as? Int, 720)
                 } else {
                     XCTFail()
                 }

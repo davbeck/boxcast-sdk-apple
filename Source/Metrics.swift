@@ -35,11 +35,13 @@ struct Metric {
     let time: CMTime
     let totalTime: CMTime
     let timestamp: Date
+    let videoHeight: Int
     
-    init(action: Action, time: CMTime, totalTime: CMTime) {
+    init(action: Action, time: CMTime, totalTime: CMTime, videoHeight: Int) {
         self.action = action
         self.time = time
         self.totalTime = totalTime
+        self.videoHeight = videoHeight
         self.timestamp = Date()
     }
     
@@ -87,6 +89,7 @@ extension Metric: JSONDeserializable {
             "position": time.seconds,
             "duration": totalTime.seconds,
             "timestamp": Metric.dateFormatter.string(from: timestamp),
+            "videoHeight": videoHeight,
             ]
         action.deserialized().forEach { params[$0] = $1 }
         return params
@@ -147,8 +150,6 @@ class MetricsConsumer {
             print("there is no account id, broadcast was not detailed")
             return
         }
-        
-        print("consuming: \(metric)")
         
         var params: Parameters = [
             // ???: If the status was "stalled" wouldn't this incorrectly report is_live = false

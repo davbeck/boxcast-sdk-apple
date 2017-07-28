@@ -79,7 +79,8 @@ public class BoxCastPlayer : AVPlayer {
                 }
                 action = .play
             }
-            metric = Metric(action: action, time: currentTime, totalTime: totalTime)
+            metric = Metric(action: action, time: currentTime, totalTime: totalTime,
+                            videoHeight: videoHeight)
             send(metric: metric)
         }
     }
@@ -136,7 +137,8 @@ public class BoxCastPlayer : AVPlayer {
     }
     
     private func sendSetupMetric() {
-        let metric = Metric(action: .setup, time: currentTime(), totalTime: totalTime)
+        let metric = Metric(action: .setup, time: currentTime(), totalTime: totalTime,
+                            videoHeight: videoHeight)
         send(metric: metric)
     }
     
@@ -146,7 +148,8 @@ public class BoxCastPlayer : AVPlayer {
             totalTime = totalTime + (currentTime - lastPlayTime)
         }
         
-        let metric = Metric(action: .setup, time: currentTime, totalTime: totalTime)
+        let metric = Metric(action: .setup, time: currentTime, totalTime: totalTime,
+                            videoHeight: videoHeight)
         send(metric: metric)
     }
     
@@ -158,7 +161,8 @@ public class BoxCastPlayer : AVPlayer {
             totalTime = totalTime + (currentTime - lastPlayTime)
         }
         
-        let metric = Metric(action: .time, time: currentTime, totalTime: totalTime)
+        let metric = Metric(action: .time, time: currentTime, totalTime: totalTime,
+                            videoHeight: videoHeight)
         send(metric: metric)
     }
     
@@ -172,7 +176,7 @@ public class BoxCastPlayer : AVPlayer {
         // we only get the time after the seek has happened so we store the last sent time for all
         // sent metrics to handle this.
         let metric = Metric(action: .seek(toTime: currentTime), time: lastSentTime,
-                            totalTime: totalTime)
+                            totalTime: totalTime, videoHeight: videoHeight)
         send(metric: metric)
     }
     
@@ -182,6 +186,13 @@ public class BoxCastPlayer : AVPlayer {
         case .seek(let toTime): lastSentTime = toTime
         default: lastSentTime = metric.time
         }
+    }
+    
+    private var videoHeight: Int {
+        guard let item = currentItem else {
+            return 0
+        }
+        return Int(item.presentationSize.height)
     }
 }
 
