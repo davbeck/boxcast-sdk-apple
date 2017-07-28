@@ -18,7 +18,8 @@ class MetricsTests: XCTestCase {
         defaults?.removeObject(forKey: "viewerId")
         
         let broadcast = Broadcast(id: "1", name: "Test", description: "A test broadcast.",
-                                  thumbnailURL: URL(string: "http://localhost")!, channelId: "1")
+                                  thumbnailURL: URL(string: "http://localhost")!, startDate: Date(),
+                                  stopDate: Date(), channelId: "1")
         let broadcastView = BroadcastView(status: .live)
         let mc1 = MetricsConsumer(broadcast: broadcast, broadcastView: broadcastView)
         let mc2 = MetricsConsumer(broadcast: broadcast, broadcastView: broadcastView)
@@ -27,7 +28,8 @@ class MetricsTests: XCTestCase {
     
     func testGeneratesUniqueViewId() {
         let broadcast = Broadcast(id: "1", name: "Test", description: "A test broadcast.",
-                                  thumbnailURL: URL(string: "http://localhost")!, channelId: "1")
+                                  thumbnailURL: URL(string: "http://localhost")!, startDate: Date(),
+                                  stopDate: Date(), channelId: "1")
         let broadcastView = BroadcastView(status: .live)
         let mc1 = MetricsConsumer(broadcast: broadcast, broadcastView: broadcastView)
         let mc2 = MetricsConsumer(broadcast: broadcast, broadcastView: broadcastView)
@@ -36,7 +38,8 @@ class MetricsTests: XCTestCase {
     
     func testMetricsEndpoint() {
         let broadcast = Broadcast(id: "1", name: "Test", description: "A test broadcast.",
-                                  thumbnailURL: URL(string: "http://localhost")!, channelId: "1")
+                                  thumbnailURL: URL(string: "http://localhost")!, startDate: Date(),
+                                  stopDate: Date(), channelId: "1")
         let broadcastView = BroadcastView(status: .live)
         let mc = MetricsConsumer(broadcast: broadcast, broadcastView: broadcastView)
         XCTAssertEqual(mc.metricsURL, "https://metrics.boxcast.com")
@@ -44,8 +47,8 @@ class MetricsTests: XCTestCase {
     
     func testConsumesPlay() {
         let broadcast = Broadcast(id: "1", name: "Test", description: "A test broadcast.",
-                                  thumbnailURL: URL(string: "http://localhost")!, channelId: "1",
-                                  accountId: "1")
+                                  thumbnailURL: URL(string: "http://localhost")!, startDate: Date(),
+                                  stopDate: Date(), channelId: "1", accountId: "1")
         let broadcastView = BroadcastView(status: .live)
         let expectation = self.expectation(description: "ConsumesPlay")
         

@@ -10,6 +10,8 @@
 		411FC1AA1ECB86880034C4F3 /* InfoPlistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FC1A81ECB856B0034C4F3 /* InfoPlistTests.swift */; };
 		411FC1AC1ECB87CB0034C4F3 /* QueryBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FC1AB1ECB87CB0034C4F3 /* QueryBuilderTests.swift */; };
 		411FC1AF1ECB8AF90034C4F3 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FC1AD1ECB8ABD0034C4F3 /* Device.swift */; };
+		419665271F2B9FC500CBB9A8 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419665261F2B9FC500CBB9A8 /* Formatters.swift */; };
+		419665281F2B9FC500CBB9A8 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419665261F2B9FC500CBB9A8 /* Formatters.swift */; };
 		419957DA1ECBEC2D0042FEA6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 419957D91ECBEC2D0042FEA6 /* Alamofire.framework */; };
 		41C5C9011ECC7F1F00EFD295 /* BoxCast.h in Headers */ = {isa = PBXBuildFile; fileRef = 41FB6D251EC771DA00C9EC8C /* BoxCast.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41C5C9021ECC7F4200EFD295 /* BoxCastClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB6D291EC7720300C9EC8C /* BoxCastClient.swift */; };
@@ -92,6 +94,7 @@
 		411FC1A81ECB856B0034C4F3 /* InfoPlistTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPlistTests.swift; sourceTree = "<group>"; };
 		411FC1AB1ECB87CB0034C4F3 /* QueryBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryBuilderTests.swift; sourceTree = "<group>"; };
 		411FC1AD1ECB8ABD0034C4F3 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		419665261F2B9FC500CBB9A8 /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		419957D91ECBEC2D0042FEA6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		419957DB1ECBEC3C0042FEA6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		41C5C8F91ECC7EF500EFD295 /* BoxCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BoxCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				411FC1AD1ECB8ABD0034C4F3 /* Device.swift */,
+				419665261F2B9FC500CBB9A8 /* Formatters.swift */,
 				41FB6D671EC8CD5900C9EC8C /* InfoPlist.swift */,
 				41FB6D2F1EC77DD700C9EC8C /* QueryBuilder.swift */,
 				41FB6D741ECA482C00C9EC8C /* System.swift */,
@@ -579,6 +583,7 @@
 				41C5C90C1ECC7F4200EFD295 /* BroadcastView.swift in Sources */,
 				41C5C9041ECC7F4200EFD295 /* Errors.swift in Sources */,
 				41C5C9091ECC7F4200EFD295 /* System.swift in Sources */,
+				419665281F2B9FC500CBB9A8 /* Formatters.swift in Sources */,
 				41C5C90A1ECC7F4200EFD295 /* UserDefaults.swift in Sources */,
 				41C5C9031ECC7F4200EFD295 /* BoxCastPlayer.swift in Sources */,
 				41C5C9051ECC7F4200EFD295 /* Metrics.swift in Sources */,
@@ -610,6 +615,7 @@
 				41FB6D361EC78AD300C9EC8C /* Errors.swift in Sources */,
 				41FB6D301EC77DD700C9EC8C /* QueryBuilder.swift in Sources */,
 				41FB6D641EC8BF9000C9EC8C /* BoxCastPlayer.swift in Sources */,
+				419665271F2B9FC500CBB9A8 /* Formatters.swift in Sources */,
 				41FB6D711EC9F01200C9EC8C /* UserDefaults.swift in Sources */,
 				41FB6D661EC8C5D800C9EC8C /* Metrics.swift in Sources */,
 				41FB6D2A1EC7720300C9EC8C /* BoxCastClient.swift in Sources */,

@@ -17,6 +17,7 @@ class BroadcastViewController: UIViewController {
     
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
     
@@ -70,9 +71,13 @@ class BroadcastViewController: UIViewController {
         BoxCastClient.shared.getBroadcast(broadcastId: broadcast.id,
                                           channelId: broadcast.channelId) { broadcast, error in
             if let broadcast = broadcast {
+                let formatter = DateFormatter()
+                formatter.dateStyle = .medium
+                formatter.timeStyle = .short
                 self.broadcast = broadcast
                 self.title = broadcast.name
                 self.nameLabel.text = broadcast.name
+                self.dateLabel.text = formatter.string(from: broadcast.startDate)
                 self.descriptionLabel.text = broadcast.description
                 
                 self.loadThumbnail()
