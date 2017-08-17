@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 
 /// The struct that represents a BoxCast broadcast.
 public struct Broadcast {

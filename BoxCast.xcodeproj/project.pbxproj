@@ -12,7 +12,6 @@
 		411FC1AF1ECB8AF90034C4F3 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FC1AD1ECB8ABD0034C4F3 /* Device.swift */; };
 		419665271F2B9FC500CBB9A8 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419665261F2B9FC500CBB9A8 /* Formatters.swift */; };
 		419665281F2B9FC500CBB9A8 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419665261F2B9FC500CBB9A8 /* Formatters.swift */; };
-		419957DA1ECBEC2D0042FEA6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 419957D91ECBEC2D0042FEA6 /* Alamofire.framework */; };
 		41C5C9011ECC7F1F00EFD295 /* BoxCast.h in Headers */ = {isa = PBXBuildFile; fileRef = 41FB6D251EC771DA00C9EC8C /* BoxCast.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41C5C9021ECC7F4200EFD295 /* BoxCastClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB6D291EC7720300C9EC8C /* BoxCastClient.swift */; };
 		41C5C9031ECC7F4200EFD295 /* BoxCastPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB6D631EC8BF9000C9EC8C /* BoxCastPlayer.swift */; };
@@ -25,7 +24,6 @@
 		41C5C90A1ECC7F4200EFD295 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB6D6F1EC9EF5900C9EC8C /* UserDefaults.swift */; };
 		41C5C90B1ECC7F4200EFD295 /* Broadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB6D2C1EC775B800C9EC8C /* Broadcast.swift */; };
 		41C5C90C1ECC7F4200EFD295 /* BroadcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB6D311EC7812800C9EC8C /* BroadcastView.swift */; };
-		41C5C90D1ECC7F5900EFD295 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 419957DB1ECBEC3C0042FEA6 /* Alamofire.framework */; };
 		41C5C9171ECC7F8C00EFD295 /* BoxCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C5C8F91ECC7EF500EFD295 /* BoxCast.framework */; };
 		41C5C91D1ECC7FEF00EFD295 /* BoxCastClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB6D691EC9ECBA00C9EC8C /* BoxCastClientTests.swift */; };
 		41C5C91E1ECC7FF100EFD295 /* InfoPlistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FC1A81ECB856B0034C4F3 /* InfoPlistTests.swift */; };
@@ -95,8 +93,6 @@
 		411FC1AB1ECB87CB0034C4F3 /* QueryBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryBuilderTests.swift; sourceTree = "<group>"; };
 		411FC1AD1ECB8ABD0034C4F3 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		419665261F2B9FC500CBB9A8 /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
-		419957D91ECBEC2D0042FEA6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		419957DB1ECBEC3C0042FEA6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		41C5C8F91ECC7EF500EFD295 /* BoxCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BoxCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C5C9121ECC7F8C00EFD295 /* BoxCast macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BoxCast macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C5C9231ECC930A00EFD295 /* DeviceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTests.swift; sourceTree = "<group>"; };
@@ -133,7 +129,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41C5C90D1ECC7F5900EFD295 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +144,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				419957DA1ECBEC2D0042FEA6 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,15 +166,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		419957D81ECBEC2D0042FEA6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				419957DB1ECBEC3C0042FEA6 /* Alamofire.framework */,
-				419957D91ECBEC2D0042FEA6 /* Alamofire.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		41FB6CF21EC76C8500C9EC8C = {
 			isa = PBXGroup;
 			children = (
@@ -188,7 +173,6 @@
 				41FB6D171EC76D9A00C9EC8C /* Tests */,
 				41FB6D3C1EC78D9100C9EC8C /* Demo */,
 				41FB6CFD1EC76C8500C9EC8C /* Products */,
-				419957D81ECBEC2D0042FEA6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -303,7 +287,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41C5C8FE1ECC7EF500EFD295 /* Build configuration list for PBXNativeTarget "BoxCast macOS" */;
 			buildPhases = (
-				41C5C9271ECC9F5500EFD295 /* Build Carthage Dependencies */,
 				41C5C8F41ECC7EF500EFD295 /* Sources */,
 				41C5C8F51ECC7EF500EFD295 /* Frameworks */,
 				41C5C8F61ECC7EF500EFD295 /* Headers */,
@@ -325,7 +308,6 @@
 				41C5C90E1ECC7F8C00EFD295 /* Sources */,
 				41C5C90F1ECC7F8C00EFD295 /* Frameworks */,
 				41C5C9101ECC7F8C00EFD295 /* Resources */,
-				41C5C9221ECC802A00EFD295 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -341,7 +323,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41FB6D101EC76C8500C9EC8C /* Build configuration list for PBXNativeTarget "BoxCast iOS" */;
 			buildPhases = (
-				411FC1B01ECB94330034C4F3 /* Build Carthage Dependencies */,
 				41FB6CF71EC76C8500C9EC8C /* Sources */,
 				41FB6CF81EC76C8500C9EC8C /* Frameworks */,
 				41FB6CF91EC76C8500C9EC8C /* Headers */,
@@ -363,7 +344,6 @@
 				41FB6D011EC76C8500C9EC8C /* Sources */,
 				41FB6D021EC76C8500C9EC8C /* Frameworks */,
 				41FB6D031EC76C8500C9EC8C /* Resources */,
-				41FB6D341EC789A900C9EC8C /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -383,7 +363,6 @@
 				41FB6D381EC78D9100C9EC8C /* Frameworks */,
 				41FB6D391EC78D9100C9EC8C /* Resources */,
 				41FB6D5F1EC78FBB00C9EC8C /* Embed Frameworks */,
-				41FB6D601EC790F200C9EC8C /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -495,82 +474,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		411FC1B01ECB94330034C4F3 /* Build Carthage Dependencies */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Build Carthage Dependencies";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ ! -x /usr/local/bin/carthage ]; then\necho \"Carthage is not installed. Install Carthage using Homebrew.\"\nexit 1\nfi\n\nif [ ! -d \"${SRCROOT}/Carthage/Checkouts\" ]; then\necho \"Checking out Carthage dependencies\"\nenv -i /usr/local/bin/carthage checkout\nfi\n\nif [ ! -d \"${SRCROOT}/Carthage/Build/iOS\" ]; then\necho \"Building Carthage dependencies\"\nenv -i PLATFORM_NAME=$PLATFORM_NAME /usr/local/bin/carthage build --platform ios\nfi";
-		};
-		41C5C9221ECC802A00EFD295 /* Copy Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/Alamofire.framework",
-			);
-			name = "Copy Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		41C5C9271ECC9F5500EFD295 /* Build Carthage Dependencies */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Build Carthage Dependencies";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ ! -x /usr/local/bin/carthage ]; then\necho \"Carthage is not installed. Install Carthage using Homebrew.\"\nexit 1\nfi\n\nif [ ! -d \"${SRCROOT}/Carthage/Checkouts\" ]; then\necho \"Checking out Carthage dependencies\"\nenv -i /usr/local/bin/carthage checkout\nfi\n\nif [ ! -d \"${SRCROOT}/Carthage/Build/Mac\" ]; then\necho \"Building Carthage dependencies\"\nenv -i PLATFORM_NAME=$PLATFORM_NAME /usr/local/bin/carthage build --platform mac\nfi";
-		};
-		41FB6D341EC789A900C9EC8C /* Copy Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-			);
-			name = "Copy Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		41FB6D601EC790F200C9EC8C /* Copy Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-			);
-			name = "Copy Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		41C5C8F41ECC7EF500EFD295 /* Sources */ = {
@@ -692,10 +595,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -719,10 +618,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -742,7 +637,6 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4DR4Q6A8AY;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/Mac";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -759,7 +653,6 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4DR4Q6A8AY;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/Mac";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -881,10 +774,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -907,10 +796,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -928,10 +813,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4DR4Q6A8AY;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boxcast.BoxCastSDKTests;
@@ -947,10 +828,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4DR4Q6A8AY;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boxcast.BoxCastSDKTests;

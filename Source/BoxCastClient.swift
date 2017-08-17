@@ -7,13 +7,12 @@
 //
 
 import Foundation
-import Alamofire
 
 /// The client for the BoxCast API. Use the client to access resources of the BoxCast ecosystem.
 public class BoxCastClient {
     
     let apiURL = "https://api.boxcast.com"
-    let manager: SessionManager
+    let session: URLSession
     
     private enum Timeframe: String {
         case live = "current"
@@ -25,12 +24,13 @@ public class BoxCastClient {
     /// The shared singleton object to be used for accessing resources.
     public static let shared = BoxCastClient()
     
-    internal init() {
-        manager = SessionManager()
+    internal convenience init() {
+        let configuration = URLSessionConfiguration.default
+        self.init(configuration: configuration)
     }
     
-    internal init(manager: SessionManager) {
-        self.manager = manager
+    internal init(configuration: URLSessionConfiguration) {
+        session = URLSession(configuration: configuration)
     }
     
     // MARK: - Accessing Resources
@@ -60,14 +60,17 @@ public class BoxCastClient {
     ///   - channelId: The channel id.
     ///   - completionHandler: The handler to be called upon completion.
     public func getBroadcast(broadcastId: String, channelId: String, completionHandler: @escaping ((Broadcast?, Error?) -> Void)) {
-        let request = manager.request("\(apiURL)/broadcasts/\(broadcastId)")
-        request
-            .validate(statusCode: 200..<300)
-            .responseJSON { response in
-                let result = response.flatMap { json in
-                    return try Broadcast(channelId: channelId, json: json)
+        getJSON(for: "\(apiURL)/broadcasts/\(broadcastId)") { (json, error) in
+            if let json = json {
+                do {
+                    let broadcast = try Broadcast(channelId: channelId, json: json)
+                    completionHandler(broadcast, nil)
+                } catch {
+                    completionHandler(nil, error)
                 }
-                completionHandler(result.value, result.error)
+            } else {
+                completionHandler(nil, error ?? BoxCastError.unknown)
+            }
         }
     }
     
@@ -77,14 +80,17 @@ public class BoxCastClient {
     ///   - broadcastId: The broadcast id.
     ///   - completionHandler: The handler to be called upon completion.
     public func getBroadcastView(broadcastId: String, completionHandler: @escaping ((BroadcastView?, Error?) -> Void)) {
-        let request = manager.request("\(apiURL)/broadcasts/\(broadcastId)/view")
-        request
-            .validate(statusCode: 200..<300)
-            .responseJSON { response in
-                let result = response.flatMap { json in
-                    return try BroadcastView(json: json)
+        getJSON(for: "\(apiURL)/broadcasts/\(broadcastId)/view") { (json, error) in
+            if let json = json {
+                do {
+                    let broadcastView = try BroadcastView(json: json)
+                    completionHandler(broadcastView, nil)
+                } catch {
+                    completionHandler(nil, error)
                 }
-                completionHandler(result.value, result.error)
+            } else {
+                completionHandler(nil, error ?? BoxCastError.unknown)
+            }
         }
     }
     
@@ -98,16 +104,68 @@ public class BoxCastClient {
         let params = [
             "q" : query.build()
         ]
-        let request = manager.request("\(apiURL)/channels/\(channelId)/broadcasts",
-                                      parameters: params)
-        request
-            .validate(statusCode: 200..<300)
-            .responseJSON { response in
-                let result = response.flatMap { json in
-                    return try BroadcastList(channelId: channelId, json: json)
+        getJSON(for: "\(apiURL)/channels/\(channelId)/broadcasts", parameters: params) { (json, error) in
+            if let json = json {
+                do {
+                    let broadcastList = try BroadcastList(channelId: channelId, json: json)
+                    completionHandler(broadcastList, nil)
+                } catch {
+                    completionHandler(nil, error)
                 }
-                completionHandler(result.value, result.error)
+            } else {
+                completionHandler(nil, error ?? BoxCastError.unknown)
+            }
+        }
+    }
+    
+    private func getJSON(for url: String, completionHandler: @escaping (Any?, Error?) -> Void ) {
+        getJSON(for: url, parameters: nil, completionHandler: completionHandler)
+    }
+    
+    private func getJSON(for url: String, parameters: [String : Any]?, completionHandler: @escaping (Any?, Error?) -> Void) {
+        guard let url = URL(string: url) else {
+            return completionHandler(nil, BoxCastError.invalidURL)
         }
         
+        var request = URLRequest(url: url)
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        if let parameters = parameters {
+            do {
+                let data = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+                request.httpBody = data
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            } catch {
+                completionHandler(nil, error)
+            }
+        }
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            guard error == nil else {
+                DispatchQueue.main.async { completionHandler(nil, error) }
+                return
+            }
+            guard let response = response as? HTTPURLResponse else {
+                DispatchQueue.main.async { completionHandler(nil, BoxCastError.unknown) }
+                return
+            }
+            guard response.statusCode >= 200 && response.statusCode < 300 else {
+                // TODO parse JSON for error object.
+                DispatchQueue.main.async { completionHandler(nil, BoxCastError.unknown) }
+                return
+            }
+            guard let data = data else {
+                DispatchQueue.main.async { completionHandler(nil, BoxCastError.unknown) }
+                return
+            }
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                DispatchQueue.main.async { completionHandler(json, nil) }
+            } catch {
+                DispatchQueue.main.async { completionHandler(nil, error) }
+            }
+            
+        }
+        task.resume()
     }
 }

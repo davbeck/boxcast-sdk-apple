@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 import CoreMedia
 
 struct Metric {
@@ -48,12 +47,12 @@ struct Metric {
 }
 
 protocol JSONDeserializable {
-    func deserialized() -> Parameters
+    func deserialized() -> [String : Any]
 }
 
 extension Metric.Action: JSONDeserializable {
-    func deserialized() -> Parameters {
-        var params: Parameters = [:]
+    func deserialized() -> [String : Any] {
+        var params: [String : Any] = [:]
         switch self {
         case .setup:
             params["action"] = "setup"
@@ -84,8 +83,8 @@ extension Metric.Action: JSONDeserializable {
 }
 
 extension Metric: JSONDeserializable {
-    func deserialized() -> Parameters {
-        var params: Parameters = [
+    func deserialized() -> [String : Any] {
+        var params: [String : Any] = [
             "position": time.seconds,
             "duration": totalTime.seconds,
             "timestamp": Metric.dateFormatter.string(from: timestamp),
@@ -123,7 +122,7 @@ class MetricsConsumer {
         "Accept" : "application/json"
     ]
     let appName: String
-    let manager: SessionManager
+    let session: URLSession
     let broadcast: Broadcast
     let broadcastView: BroadcastView
     let viewId: String
@@ -131,14 +130,14 @@ class MetricsConsumer {
     // MARK: - Lifecycle
     
     convenience init(broadcast: Broadcast, broadcastView: BroadcastView) {
-        let manager = SessionManager()
-        self.init(broadcast: broadcast, broadcastView: broadcastView, manager: manager)
+        let configuration = URLSessionConfiguration.default
+        self.init(broadcast: broadcast, broadcastView: broadcastView, configuration: configuration)
     }
     
-    init(broadcast: Broadcast, broadcastView: BroadcastView, manager: SessionManager) {
+    init(broadcast: Broadcast, broadcastView: BroadcastView, configuration: URLSessionConfiguration) {
         self.broadcast = broadcast
         self.broadcastView = broadcastView
-        self.manager = manager
+        session = URLSession(configuration: configuration)
         appName = InfoPlist.appName
         viewId = UUID().uuidString
     }
@@ -151,7 +150,7 @@ class MetricsConsumer {
             return
         }
         
-        var params: Parameters = [
+        var params: [String: Any] = [
             // ???: If the status was "stalled" wouldn't this incorrectly report is_live = false
             "is_live" : broadcastView.status == .live,
             "account_id" : accountId,
@@ -161,20 +160,12 @@ class MetricsConsumer {
             "viewer_id" : viewerId,
         ]
         metric.deserialized().forEach { params[$0] = $1 }
-        
-        let request = manager.request("\(metricsURL)/player/interaction", method: .post,
-                                      parameters: params, encoding: JSONEncoding.default,
-                                      headers: headers)
-        request
-            .validate(statusCode: 200..<300)
-            .response { response in
-                if let error = response.error {
-                    print("error posting metric: \(error.localizedDescription)")
-                }
+        postJSON(url: "\(metricsURL)/player/interaction", parameters: params) { success, error in
+            if let error = error {
+                print("error posting metric: \(error.localizedDescription)")
             }
+        }
     }
-    
-    // MARK: - Internal
     
     var viewerId: String {
         guard let defaults = UserDefaults.boxCastDefaults else {
@@ -187,6 +178,44 @@ class MetricsConsumer {
             defaults.set(id, forKey: "viewerId")
             return id
         }
+    }
+    
+    // MARK: - Private
+    
+    private func postJSON(url: String, parameters: [String: Any], completionHandler: @escaping (Bool, Error?) -> Void) {
+        guard let url = URL(string: url) else {
+            return completionHandler(false, BoxCastError.invalidURL)
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        do {
+            let data = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+            request.httpBody = data
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        } catch {
+            completionHandler(false, error)
+        }
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            guard error == nil else {
+                DispatchQueue.main.async { completionHandler(false, error) }
+                return
+            }
+            guard let response = response as? HTTPURLResponse else {
+                DispatchQueue.main.async { completionHandler(false, BoxCastError.unknown) }
+                return
+            }
+            guard response.statusCode >= 200 && response.statusCode < 300 else {
+                // TODO parse JSON for error object.
+                DispatchQueue.main.async { completionHandler(false, BoxCastError.unknown) }
+                return
+            }
+            DispatchQueue.main.async { completionHandler(true, nil) }
+        }
+        task.resume()
     }
 }
 

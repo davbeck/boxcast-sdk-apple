@@ -7,13 +7,11 @@
 //
 
 import XCTest
-import Alamofire
 @testable import BoxCast
 
 class BoxCastClientTests: XCTestCase {
     
     var client: BoxCastClient?
-    var manager: SessionManager?
     
     override func setUp() {
         super.setUp()
@@ -21,8 +19,7 @@ class BoxCastClientTests: XCTestCase {
         // Set up mocking of the responses.
         let configuration = URLSessionConfiguration.default
         configuration.protocolClasses?.insert(MockedURLProtocol.self, at: 0)
-        manager = SessionManager(configuration: configuration)
-        client = BoxCastClient(manager: manager!)
+        client = BoxCastClient(configuration: configuration)
     }
     
     override func tearDown() {

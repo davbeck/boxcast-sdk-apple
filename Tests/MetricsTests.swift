@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import Alamofire
 import CoreMedia
 @testable import BoxCast
 
@@ -62,11 +61,10 @@ class MetricsTests: XCTestCase {
         // Mock manager
         let configuration = URLSessionConfiguration.default
         configuration.protocolClasses?.insert(MockedURLProtocol.self, at: 0)
-        let manager = MockedManager(configuration: configuration)
         
         // Create consumer and consume a metric.
         let mc = MetricsConsumer(broadcast: broadcast, broadcastView: broadcastView,
-                                 manager: manager)
+                                 configuration: configuration)
         let metric = Metric(action: .play, time: CMTime(seconds: 5, preferredTimescale: 60),
                             totalTime: CMTime(seconds: 10, preferredTimescale: 60),
                             videoHeight: 720)
@@ -99,4 +97,10 @@ class MetricsTests: XCTestCase {
         }
     }
     
+}
+
+class MockedMetricsConsumer: MetricsConsumer {
+    override func consume(metric: Metric) {
+        
+    }
 }

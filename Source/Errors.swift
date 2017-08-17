@@ -12,4 +12,7 @@ import Foundation
 public enum BoxCastError: Error {
     /// The resource was unable to be serialized.
     case serializationError
+    /// The URL provided was invalid.
+    case invalidURL
+    case unknown
 }

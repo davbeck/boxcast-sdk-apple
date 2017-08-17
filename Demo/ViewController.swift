@@ -11,7 +11,7 @@ import BoxCast
 
 class ViewController: UITableViewController {
     
-    let channelId = "YOUR_CHANNEL_ID"
+    let channelId = "qdtdsa56dbclah0lzeqp"
     var liveBroadcasts: BroadcastList = []
     var archivedBroadcasts: BroadcastList = []
 
