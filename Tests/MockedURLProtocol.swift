@@ -11,6 +11,7 @@ import Foundation
 class MockedURLProtocol : URLProtocol {
     
     static var mockedData: Data?
+    static var mockedStatusCode: Int?
     static let mockedHeaders = ["Content-Type" : "application/json; charset=utf-8"]
     static var requestDataHandler: ((Data?) -> Void)?
     
@@ -28,7 +29,8 @@ class MockedURLProtocol : URLProtocol {
         }
         
         let client = self.client
-        let response = HTTPURLResponse(url: request.url!, statusCode: 200,
+        let statusCode = MockedURLProtocol.mockedStatusCode ?? 200
+        let response = HTTPURLResponse(url: request.url!, statusCode: statusCode,
                                        httpVersion: "HTTP/1.1",
                                        headerFields: MockedURLProtocol.mockedHeaders)
         client?.urlProtocol(self, didReceive: response!, cacheStoragePolicy: .notAllowed)
