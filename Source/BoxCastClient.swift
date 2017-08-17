@@ -8,11 +8,27 @@
 
 import Foundation
 
+public struct PublicScope: BoxCastScopable {
+    public var isAuthorized: Bool {
+        return true
+    }
+}
+
+public protocol BoxCastScopable {
+    var isAuthorized: Bool { get }
+}
+
 /// The client for the BoxCast API. Use the client to access resources of the BoxCast ecosystem.
 public class BoxCastClient {
     
     let apiURL = "https://api.boxcast.com"
     let session: URLSession
+    
+    // MARK: - Setup
+    
+    public static func setUp(scope: BoxCastScopable = PublicScope()) {
+        
+    }
     
     // MARK: - Shared Instance
     
