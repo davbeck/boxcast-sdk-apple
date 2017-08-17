@@ -6,6 +6,13 @@
       "symbol": "BoxCastPlayer.observeValue(forKeyPath:of:change:context:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Helpers/Formatters.swift",
+      "line": 11,
+      "symbol": "BoxCastDateFormatter",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple"
