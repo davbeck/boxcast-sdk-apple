@@ -8,6 +8,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Errors.swift",
+      "line": 17,
+      "symbol": "BoxCastError.unknown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Helpers/Formatters.swift",
       "line": 11,
       "symbol": "BoxCastDateFormatter",
