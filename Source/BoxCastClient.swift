@@ -44,13 +44,13 @@ public class BoxCastClient {
         session = URLSession(configuration: configuration)
     }
     
-    // MARK: - Internal    
+    // MARK: - Request
     
-    func getJSON(for url: String, completionHandler: @escaping (Any?, Error?) -> Void ) {
+    public func getJSON(for url: String, completionHandler: @escaping (Any?, Error?) -> Void ) {
         getJSON(for: url, parameters: nil, completionHandler: completionHandler)
     }
     
-    func getJSON(for url: String, parameters: [String : Any]?, completionHandler: @escaping (Any?, Error?) -> Void) {
+    public func getJSON(for url: String, parameters: [String : Any]?, completionHandler: @escaping (Any?, Error?) -> Void) {
         guard let url = URL(string: url) else {
             return completionHandler(nil, BoxCastError.invalidURL)
         }
