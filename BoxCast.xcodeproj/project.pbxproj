@@ -10,14 +10,14 @@
 		411FC1AA1ECB86880034C4F3 /* InfoPlistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FC1A81ECB856B0034C4F3 /* InfoPlistTests.swift */; };
 		411FC1AC1ECB87CB0034C4F3 /* QueryBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FC1AB1ECB87CB0034C4F3 /* QueryBuilderTests.swift */; };
 		411FC1AF1ECB8AF90034C4F3 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FC1AD1ECB8ABD0034C4F3 /* Device.swift */; };
-		4138E5031F4612D8007975AE /* Broadcasts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4138E5021F4612D8007975AE /* Broadcasts.swift */; };
-		4138E5041F4612D8007975AE /* Broadcasts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4138E5021F4612D8007975AE /* Broadcasts.swift */; };
-		4138E5061F461311007975AE /* BroadcastViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4138E5051F461311007975AE /* BroadcastViews.swift */; };
-		4138E5071F461311007975AE /* BroadcastViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4138E5051F461311007975AE /* BroadcastViews.swift */; };
-		4138E5091F462719007975AE /* BroadcastsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4138E5081F462719007975AE /* BroadcastsTests.swift */; };
-		4138E50A1F462719007975AE /* BroadcastsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4138E5081F462719007975AE /* BroadcastsTests.swift */; };
-		4138E50C1F46276E007975AE /* BroadcastViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4138E50B1F46276E007975AE /* BroadcastViewsTests.swift */; };
-		4138E50D1F46276E007975AE /* BroadcastViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4138E50B1F46276E007975AE /* BroadcastViewsTests.swift */; };
+		4138E5031F4612D8007975AE /* BroadcastRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4138E5021F4612D8007975AE /* BroadcastRoutes.swift */; };
+		4138E5041F4612D8007975AE /* BroadcastRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4138E5021F4612D8007975AE /* BroadcastRoutes.swift */; };
+		4138E5061F461311007975AE /* BroadcastViewRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4138E5051F461311007975AE /* BroadcastViewRoutes.swift */; };
+		4138E5071F461311007975AE /* BroadcastViewRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4138E5051F461311007975AE /* BroadcastViewRoutes.swift */; };
+		4138E5091F462719007975AE /* BroadcastRoutesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4138E5081F462719007975AE /* BroadcastRoutesTests.swift */; };
+		4138E50A1F462719007975AE /* BroadcastRoutesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4138E5081F462719007975AE /* BroadcastRoutesTests.swift */; };
+		4138E50C1F46276E007975AE /* BroadcastViewRoutesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4138E50B1F46276E007975AE /* BroadcastViewRoutesTests.swift */; };
+		4138E50D1F46276E007975AE /* BroadcastViewRoutesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4138E50B1F46276E007975AE /* BroadcastViewRoutesTests.swift */; };
 		4138E50F1F462902007975AE /* ErrorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4138E50E1F462902007975AE /* ErrorsTests.swift */; };
 		4138E5101F462902007975AE /* ErrorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4138E50E1F462902007975AE /* ErrorsTests.swift */; };
 		419665271F2B9FC500CBB9A8 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419665261F2B9FC500CBB9A8 /* Formatters.swift */; };
@@ -102,10 +102,10 @@
 		411FC1A81ECB856B0034C4F3 /* InfoPlistTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPlistTests.swift; sourceTree = "<group>"; };
 		411FC1AB1ECB87CB0034C4F3 /* QueryBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryBuilderTests.swift; sourceTree = "<group>"; };
 		411FC1AD1ECB8ABD0034C4F3 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
-		4138E5021F4612D8007975AE /* Broadcasts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broadcasts.swift; sourceTree = "<group>"; };
-		4138E5051F461311007975AE /* BroadcastViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastViews.swift; sourceTree = "<group>"; };
-		4138E5081F462719007975AE /* BroadcastsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastsTests.swift; sourceTree = "<group>"; };
-		4138E50B1F46276E007975AE /* BroadcastViewsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastViewsTests.swift; sourceTree = "<group>"; };
+		4138E5021F4612D8007975AE /* BroadcastRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastRoutes.swift; sourceTree = "<group>"; };
+		4138E5051F461311007975AE /* BroadcastViewRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastViewRoutes.swift; sourceTree = "<group>"; };
+		4138E5081F462719007975AE /* BroadcastRoutesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastRoutesTests.swift; sourceTree = "<group>"; };
+		4138E50B1F46276E007975AE /* BroadcastViewRoutesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastViewRoutesTests.swift; sourceTree = "<group>"; };
 		4138E50E1F462902007975AE /* ErrorsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorsTests.swift; sourceTree = "<group>"; };
 		419665261F2B9FC500CBB9A8 /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		41C5C8F91ECC7EF500EFD295 /* BoxCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BoxCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,8 +184,8 @@
 		4138E5011F461125007975AE /* Routes */ = {
 			isa = PBXGroup;
 			children = (
-				4138E5021F4612D8007975AE /* Broadcasts.swift */,
-				4138E5051F461311007975AE /* BroadcastViews.swift */,
+				4138E5021F4612D8007975AE /* BroadcastRoutes.swift */,
+				4138E5051F461311007975AE /* BroadcastViewRoutes.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -232,8 +232,8 @@
 			children = (
 				41FB6D6B1EC9ECC000C9EC8C /* Info.plist */,
 				41FB6D691EC9ECBA00C9EC8C /* BoxCastClientTests.swift */,
-				4138E5081F462719007975AE /* BroadcastsTests.swift */,
-				4138E50B1F46276E007975AE /* BroadcastViewsTests.swift */,
+				4138E5081F462719007975AE /* BroadcastRoutesTests.swift */,
+				4138E50B1F46276E007975AE /* BroadcastViewRoutesTests.swift */,
 				41C5C9231ECC930A00EFD295 /* DeviceTests.swift */,
 				4138E50E1F462902007975AE /* ErrorsTests.swift */,
 				411FC1A81ECB856B0034C4F3 /* InfoPlistTests.swift */,
@@ -515,10 +515,10 @@
 				41C5C9041ECC7F4200EFD295 /* Errors.swift in Sources */,
 				41C5C9091ECC7F4200EFD295 /* System.swift in Sources */,
 				419665281F2B9FC500CBB9A8 /* Formatters.swift in Sources */,
-				4138E5041F4612D8007975AE /* Broadcasts.swift in Sources */,
+				4138E5041F4612D8007975AE /* BroadcastRoutes.swift in Sources */,
 				41C5C90A1ECC7F4200EFD295 /* UserDefaults.swift in Sources */,
 				41C5C9031ECC7F4200EFD295 /* BoxCastPlayer.swift in Sources */,
-				4138E5071F461311007975AE /* BroadcastViews.swift in Sources */,
+				4138E5071F461311007975AE /* BroadcastViewRoutes.swift in Sources */,
 				41C5C9051ECC7F4200EFD295 /* Metrics.swift in Sources */,
 				41C5C9061ECC7F4200EFD295 /* Device.swift in Sources */,
 				41C5C90B1ECC7F4200EFD295 /* Broadcast.swift in Sources */,
@@ -529,11 +529,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4138E50D1F46276E007975AE /* BroadcastViewsTests.swift in Sources */,
+				4138E50D1F46276E007975AE /* BroadcastViewRoutesTests.swift in Sources */,
 				41C5C91E1ECC7FF100EFD295 /* InfoPlistTests.swift in Sources */,
 				41C5C9211ECC7FF800EFD295 /* QueryBuilderTests.swift in Sources */,
 				41C5C91F1ECC7FF300EFD295 /* MetricsTests.swift in Sources */,
-				4138E50A1F462719007975AE /* BroadcastsTests.swift in Sources */,
+				4138E50A1F462719007975AE /* BroadcastRoutesTests.swift in Sources */,
 				4138E5101F462902007975AE /* ErrorsTests.swift in Sources */,
 				41C5C9201ECC7FF500EFD295 /* MockedURLProtocol.swift in Sources */,
 				41C5C91D1ECC7FEF00EFD295 /* BoxCastClientTests.swift in Sources */,
@@ -552,10 +552,10 @@
 				41FB6D301EC77DD700C9EC8C /* QueryBuilder.swift in Sources */,
 				41FB6D641EC8BF9000C9EC8C /* BoxCastPlayer.swift in Sources */,
 				419665271F2B9FC500CBB9A8 /* Formatters.swift in Sources */,
-				4138E5031F4612D8007975AE /* Broadcasts.swift in Sources */,
+				4138E5031F4612D8007975AE /* BroadcastRoutes.swift in Sources */,
 				41FB6D711EC9F01200C9EC8C /* UserDefaults.swift in Sources */,
 				41FB6D661EC8C5D800C9EC8C /* Metrics.swift in Sources */,
-				4138E5061F461311007975AE /* BroadcastViews.swift in Sources */,
+				4138E5061F461311007975AE /* BroadcastViewRoutes.swift in Sources */,
 				41FB6D2A1EC7720300C9EC8C /* BoxCastClient.swift in Sources */,
 				411FC1AF1ECB8AF90034C4F3 /* Device.swift in Sources */,
 				41FB6D2D1EC775B800C9EC8C /* Broadcast.swift in Sources */,
@@ -566,11 +566,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4138E50C1F46276E007975AE /* BroadcastViewsTests.swift in Sources */,
+				4138E50C1F46276E007975AE /* BroadcastViewRoutesTests.swift in Sources */,
 				41FB6D731EC9FB7500C9EC8C /* MockedURLProtocol.swift in Sources */,
 				411FC1AC1ECB87CB0034C4F3 /* QueryBuilderTests.swift in Sources */,
 				41FB6D6A1EC9ECBA00C9EC8C /* BoxCastClientTests.swift in Sources */,
-				4138E5091F462719007975AE /* BroadcastsTests.swift in Sources */,
+				4138E5091F462719007975AE /* BroadcastRoutesTests.swift in Sources */,
 				4138E50F1F462902007975AE /* ErrorsTests.swift in Sources */,
 				411FC1AA1ECB86880034C4F3 /* InfoPlistTests.swift in Sources */,
 				41FB6D6E1EC9ECD700C9EC8C /* MetricsTests.swift in Sources */,

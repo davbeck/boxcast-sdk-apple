@@ -1,5 +1,5 @@
 //
-//  BroadcastViewsTests.swift
+//  BroadcastViewRoutesTests.swift
 //  BoxCast
 //
 //  Created by Camden Fullmer on 8/17/17.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import BoxCast
 
-class BroadcastViewsTests: XCTestCase {
+class BroadcastViewRoutesTests: XCTestCase {
     
     var client: BoxCastClient?
     
