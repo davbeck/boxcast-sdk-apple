@@ -21,7 +21,7 @@ public protocol BoxCastScopable {
 /// The client for the BoxCast API. Use the client to access resources of the BoxCast ecosystem.
 public class BoxCastClient {
     
-    let apiURL = "https://api.boxcast.com"
+    public let apiURL = "https://api.boxcast.com"
     let session: URLSession
     
     // MARK: - Setup
