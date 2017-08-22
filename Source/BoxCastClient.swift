@@ -99,4 +99,53 @@ public class BoxCastClient {
         }
         task.resume()
     }
+    
+    public func putJSON(for url: String, parameters: [String : Any], completionHandler: @escaping (Any?, Error?) -> Void) {
+        guard let url = URL(string: url) else {
+            return completionHandler(nil, BoxCastError.invalidURL)
+        }
+        
+        var request = URLRequest(url: url)
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        do {
+            let data = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+            request.httpMethod = "PUT"
+            request.httpBody = data
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        } catch {
+            completionHandler(nil, error)
+        }
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            guard error == nil else {
+                DispatchQueue.main.async { completionHandler(nil, error) }
+                return
+            }
+            guard let response = response as? HTTPURLResponse else {
+                DispatchQueue.main.async { completionHandler(nil, BoxCastError.unknown) }
+                return
+            }
+            guard response.statusCode >= 200 && response.statusCode < 300 else {
+                if let data = data, let error = BoxCastError(responseData: data) {
+                    DispatchQueue.main.async { completionHandler(nil, error) }
+                } else {
+                    DispatchQueue.main.async { completionHandler(nil, BoxCastError.unknown) }
+                }
+                return
+            }
+            guard let data = data else {
+                DispatchQueue.main.async { completionHandler(nil, BoxCastError.unknown) }
+                return
+            }
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                DispatchQueue.main.async { completionHandler(json, nil) }
+            } catch {
+                DispatchQueue.main.async { completionHandler(nil, error) }
+            }
+            
+        }
+        task.resume()
+    }
 }
