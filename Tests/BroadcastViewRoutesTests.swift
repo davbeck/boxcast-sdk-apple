@@ -9,21 +9,13 @@
 import XCTest
 @testable import BoxCast
 
-class BroadcastViewRoutesTests: XCTestCase {
-    
-    var client: BoxCastClient?
-    
-    override func setUp() {
-        super.setUp()
-        
-        // Set up mocking of the responses.
-        let configuration = URLSessionConfiguration.default
-        configuration.protocolClasses?.insert(MockedURLProtocol.self, at: 0)
-        client = BoxCastClient(configuration: configuration)
-    }
+class BroadcastViewRoutesTests: MockedClientTestCase {
     
     func testGetBroadcastView() {
-        let data = "{\"playlist\": \"https://api.boxcast.com/playlist\", \"status\": \"live\"}".data(using: .utf8)
+        guard let data = fixtureData(for: "View") else {
+            XCTFail("no fixture data")
+            return
+        }
         MockedURLProtocol.mockedData = data
         
         let expectation = self.expectation(description: "GetLiveBroadcasts")

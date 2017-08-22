@@ -9,18 +9,7 @@
 import XCTest
 @testable import BoxCast
 
-class ErrorsTests: XCTestCase {
-    
-    var client: BoxCastClient?
-    
-    override func setUp() {
-        super.setUp()
-        
-        // Set up mocking of the responses.
-        let configuration = URLSessionConfiguration.default
-        configuration.protocolClasses?.insert(MockedURLProtocol.self, at: 0)
-        client = BoxCastClient(configuration: configuration)
-    }
+class ErrorsTests: MockedClientTestCase {
     
     func testGetBroadcastReturnsNotFound() {
         let data = (
@@ -33,7 +22,7 @@ class ErrorsTests: XCTestCase {
         
         let expectation = self.expectation(description: "GetBroadcastReturnsNotFound")
         var error: Error?
-        client?.getBroadcast(broadcastId: "1", channelId: "2") { b, e in
+        client.getBroadcast(broadcastId: "1", channelId: "2") { b, e in
             error = e
             expectation.fulfill()
         }

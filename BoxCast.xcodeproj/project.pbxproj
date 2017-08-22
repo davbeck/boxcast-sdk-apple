@@ -42,6 +42,16 @@
 		41C5C9211ECC7FF800EFD295 /* QueryBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FC1AB1ECB87CB0034C4F3 /* QueryBuilderTests.swift */; };
 		41C5C9251ECC932E00EFD295 /* DeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C5C9231ECC930A00EFD295 /* DeviceTests.swift */; };
 		41C5C9261ECC932F00EFD295 /* DeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C5C9231ECC930A00EFD295 /* DeviceTests.swift */; };
+		41D18B311F4C762600D460BC /* MockedClientTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D18B301F4C762600D460BC /* MockedClientTestCase.swift */; };
+		41D18B321F4C762600D460BC /* MockedClientTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D18B301F4C762600D460BC /* MockedClientTestCase.swift */; };
+		41D18B331F4C76D900D460BC /* LiveBroadcasts.json in Resources */ = {isa = PBXBuildFile; fileRef = 41D18B2E1F4C718200D460BC /* LiveBroadcasts.json */; };
+		41D18B341F4C76D900D460BC /* LiveBroadcasts.json in Resources */ = {isa = PBXBuildFile; fileRef = 41D18B2E1F4C718200D460BC /* LiveBroadcasts.json */; };
+		41D18B3B1F4C7A7C00D460BC /* ArchivedBroadcasts.json in Resources */ = {isa = PBXBuildFile; fileRef = 41D18B351F4C7A6900D460BC /* ArchivedBroadcasts.json */; };
+		41D18B3C1F4C7A7C00D460BC /* ArchivedBroadcasts.json in Resources */ = {isa = PBXBuildFile; fileRef = 41D18B351F4C7A6900D460BC /* ArchivedBroadcasts.json */; };
+		41D18B3D1F4C7A7F00D460BC /* Broadcast.json in Resources */ = {isa = PBXBuildFile; fileRef = 41D18B361F4C7A6900D460BC /* Broadcast.json */; };
+		41D18B3E1F4C7A8000D460BC /* Broadcast.json in Resources */ = {isa = PBXBuildFile; fileRef = 41D18B361F4C7A6900D460BC /* Broadcast.json */; };
+		41D18B401F4C7B2D00D460BC /* View.json in Resources */ = {isa = PBXBuildFile; fileRef = 41D18B3F1F4C7B2D00D460BC /* View.json */; };
+		41D18B411F4C7B2D00D460BC /* View.json in Resources */ = {isa = PBXBuildFile; fileRef = 41D18B3F1F4C7B2D00D460BC /* View.json */; };
 		41FB6D061EC76C8500C9EC8C /* BoxCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FB6CFC1EC76C8500C9EC8C /* BoxCast.framework */; };
 		41FB6D271EC771DA00C9EC8C /* BoxCast.h in Headers */ = {isa = PBXBuildFile; fileRef = 41FB6D251EC771DA00C9EC8C /* BoxCast.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41FB6D2A1EC7720300C9EC8C /* BoxCastClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB6D291EC7720300C9EC8C /* BoxCastClient.swift */; };
@@ -111,6 +121,11 @@
 		41C5C8F91ECC7EF500EFD295 /* BoxCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BoxCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C5C9121ECC7F8C00EFD295 /* BoxCast macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BoxCast macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C5C9231ECC930A00EFD295 /* DeviceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTests.swift; sourceTree = "<group>"; };
+		41D18B2E1F4C718200D460BC /* LiveBroadcasts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LiveBroadcasts.json; sourceTree = "<group>"; };
+		41D18B301F4C762600D460BC /* MockedClientTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockedClientTestCase.swift; sourceTree = "<group>"; };
+		41D18B351F4C7A6900D460BC /* ArchivedBroadcasts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ArchivedBroadcasts.json; sourceTree = "<group>"; };
+		41D18B361F4C7A6900D460BC /* Broadcast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Broadcast.json; sourceTree = "<group>"; };
+		41D18B3F1F4C7B2D00D460BC /* View.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = View.json; sourceTree = "<group>"; };
 		41FB6CFC1EC76C8500C9EC8C /* BoxCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BoxCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41FB6D051EC76C8500C9EC8C /* BoxCast iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BoxCast iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41FB6D251EC771DA00C9EC8C /* BoxCast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxCast.h; sourceTree = "<group>"; };
@@ -190,6 +205,25 @@
 			path = Routes;
 			sourceTree = "<group>";
 		};
+		41D18B2D1F4C716300D460BC /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				41D18B351F4C7A6900D460BC /* ArchivedBroadcasts.json */,
+				41D18B361F4C7A6900D460BC /* Broadcast.json */,
+				41D18B2E1F4C718200D460BC /* LiveBroadcasts.json */,
+				41D18B3F1F4C7B2D00D460BC /* View.json */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		41D18B421F4C7B8C00D460BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				41FB6D6B1EC9ECC000C9EC8C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		41FB6CF21EC76C8500C9EC8C = {
 			isa = PBXGroup;
 			children = (
@@ -230,16 +264,18 @@
 		41FB6D171EC76D9A00C9EC8C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				41FB6D6B1EC9ECC000C9EC8C /* Info.plist */,
 				41FB6D691EC9ECBA00C9EC8C /* BoxCastClientTests.swift */,
 				4138E5081F462719007975AE /* BroadcastRoutesTests.swift */,
 				4138E50B1F46276E007975AE /* BroadcastViewRoutesTests.swift */,
 				41C5C9231ECC930A00EFD295 /* DeviceTests.swift */,
 				4138E50E1F462902007975AE /* ErrorsTests.swift */,
+				41D18B2D1F4C716300D460BC /* Fixtures */,
 				411FC1A81ECB856B0034C4F3 /* InfoPlistTests.swift */,
 				41FB6D6D1EC9ECD700C9EC8C /* MetricsTests.swift */,
+				41D18B301F4C762600D460BC /* MockedClientTestCase.swift */,
 				41FB6D721EC9FB7500C9EC8C /* MockedURLProtocol.swift */,
 				411FC1AB1ECB87CB0034C4F3 /* QueryBuilderTests.swift */,
+				41D18B421F4C7B8C00D460BC /* Supporting Files */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -474,6 +510,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41D18B411F4C7B2D00D460BC /* View.json in Resources */,
+				41D18B341F4C76D900D460BC /* LiveBroadcasts.json in Resources */,
+				41D18B3C1F4C7A7C00D460BC /* ArchivedBroadcasts.json in Resources */,
+				41D18B3E1F4C7A8000D460BC /* Broadcast.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +528,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41D18B401F4C7B2D00D460BC /* View.json in Resources */,
+				41D18B331F4C76D900D460BC /* LiveBroadcasts.json in Resources */,
+				41D18B3B1F4C7A7C00D460BC /* ArchivedBroadcasts.json in Resources */,
+				41D18B3D1F4C7A7F00D460BC /* Broadcast.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +578,7 @@
 				41C5C9211ECC7FF800EFD295 /* QueryBuilderTests.swift in Sources */,
 				41C5C91F1ECC7FF300EFD295 /* MetricsTests.swift in Sources */,
 				4138E50A1F462719007975AE /* BroadcastRoutesTests.swift in Sources */,
+				41D18B321F4C762600D460BC /* MockedClientTestCase.swift in Sources */,
 				4138E5101F462902007975AE /* ErrorsTests.swift in Sources */,
 				41C5C9201ECC7FF500EFD295 /* MockedURLProtocol.swift in Sources */,
 				41C5C91D1ECC7FEF00EFD295 /* BoxCastClientTests.swift in Sources */,
@@ -571,6 +616,7 @@
 				411FC1AC1ECB87CB0034C4F3 /* QueryBuilderTests.swift in Sources */,
 				41FB6D6A1EC9ECBA00C9EC8C /* BoxCastClientTests.swift in Sources */,
 				4138E5091F462719007975AE /* BroadcastRoutesTests.swift in Sources */,
+				41D18B311F4C762600D460BC /* MockedClientTestCase.swift in Sources */,
 				4138E50F1F462902007975AE /* ErrorsTests.swift in Sources */,
 				411FC1AA1ECB86880034C4F3 /* InfoPlistTests.swift in Sources */,
 				41FB6D6E1EC9ECD700C9EC8C /* MetricsTests.swift in Sources */,

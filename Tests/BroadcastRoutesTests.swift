@@ -9,37 +9,18 @@
 import XCTest
 @testable import BoxCast
 
-class BroadcastRoutesTests: XCTestCase {
-    
-    var client: BoxCastClient?
-    
-    override func setUp() {
-        super.setUp()
-        
-        // Set up mocking of the responses.
-        let configuration = URLSessionConfiguration.default
-        configuration.protocolClasses?.insert(MockedURLProtocol.self, at: 0)
-        client = BoxCastClient(configuration: configuration)
-    }
+class BroadcastRoutesTests: MockedClientTestCase {
     
     func testGetLiveBroadcasts() {
-        let data = (
-            "[{" +
-                "\"id\":\"1\"," +
-                "\"name\": \"Test\"," +
-                "\"description\":\"A test broadcast.\"," +
-                "\"account_id\":\"1\"," +
-                "\"channel_id\":\"1\"," +
-                "\"preview\": \"https://api.boxcast.com/thumbnail.jpg\"," +
-                "\"starts_at\": \"2017-07-28T22:00:00Z\"," +
-                "\"stops_at\": \"2017-07-28T23:00:00Z\"" +
-            "}]"
-            ).data(using: .utf8)
+        guard let data = fixtureData(for: "LiveBroadcasts") else {
+            XCTFail("no fixture data")
+            return
+        }
         MockedURLProtocol.mockedData = data
         
         let expectation = self.expectation(description: "GetLiveBroadcasts")
         var liveBroadcasts: BroadcastList?
-        client?.getLiveBroadcasts(channelId: "1") { broadcasts, error in
+        client.getLiveBroadcasts(channelId: "1") { broadcasts, error in
             liveBroadcasts = broadcasts
             expectation.fulfill()
         }
@@ -50,23 +31,15 @@ class BroadcastRoutesTests: XCTestCase {
     }
     
     func testGetArchivedBroadcasts() {
-        let data = (
-            "[{" +
-                "\"id\":\"1\"," +
-                "\"name\": \"Test\"," +
-                "\"description\":\"A test broadcast.\"," +
-                "\"account_id\":\"1\"," +
-                "\"channel_id\":\"1\"," +
-                "\"preview\": \"https://api.boxcast.com/thumbnail.jpg\"," +
-                "\"starts_at\": \"2017-07-28T22:00:00Z\"," +
-                "\"stops_at\": \"2017-07-28T23:00:00Z\"" +
-            "}]"
-            ).data(using: .utf8)
+        guard let data = fixtureData(for: "ArchivedBroadcasts") else {
+            XCTFail("no fixture data")
+            return
+        }
         MockedURLProtocol.mockedData = data
         
         let expectation = self.expectation(description: "GetArchivedBroadcasts")
         var archivedBroadcasts: BroadcastList?
-        client?.getArchivedBroadcasts(channelId: "1") { broadcasts, error in
+        client.getArchivedBroadcasts(channelId: "1") { broadcasts, error in
             archivedBroadcasts = broadcasts
             expectation.fulfill()
         }
@@ -78,25 +51,17 @@ class BroadcastRoutesTests: XCTestCase {
     
     func testGetBroadcast() {
         let formatter = BoxCastDateFormatter()
-        let startDate = formatter.date(from: "2017-07-28T22:00:00Z")!
-        let stopDate = formatter.date(from: "2017-07-28T23:00:00Z")!
-        let data = (
-            "{" +
-                "\"id\":\"1\"," +
-                "\"name\": \"Test\"," +
-                "\"description\":\"A test broadcast.\"," +
-                "\"account_id\":\"1\"," +
-                "\"channel_id\":\"1\"," +
-                "\"preview\": \"https://api.boxcast.com/thumbnail.jpg\"," +
-                "\"starts_at\": \"2017-07-28T22:00:00Z\"," +
-                "\"stops_at\": \"2017-07-28T23:00:00Z\"" +
-            "}"
-            ).data(using: .utf8)
+        let startDate = formatter.date(from: "2017-07-28T22:00:00Z") ?? Date()
+        let stopDate = formatter.date(from: "2017-07-28T23:00:00Z") ?? Date()
+        guard let data = fixtureData(for: "Broadcast") else {
+            XCTFail("no fixture data")
+            return
+        }
         MockedURLProtocol.mockedData = data
         
         let expectation = self.expectation(description: "GetLiveBroadcasts")
         var broadcast: Broadcast?
-        client?.getBroadcast(broadcastId: "1", channelId: "2") { b, error in
+        client.getBroadcast(broadcastId: "1", channelId: "2") { b, error in
             broadcast = b
             expectation.fulfill()
         }
