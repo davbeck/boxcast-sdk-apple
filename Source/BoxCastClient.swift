@@ -148,4 +148,35 @@ public class BoxCastClient {
         }
         task.resume()
     }
+    
+    public func post(url: String, parameters: [String : Any], completionHandler: @escaping (URLResponse?, Error?) -> Void) {
+        guard let url = URL(string: url) else {
+            return completionHandler(nil, BoxCastError.invalidURL)
+        }
+        
+        var request = URLRequest(url: url)
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        do {
+            let data = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+            request.httpMethod = "POST"
+            request.httpBody = data
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        } catch {
+            completionHandler(nil, error)
+        }
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            guard error == nil else {
+                DispatchQueue.main.async { completionHandler(nil, error) }
+                return
+            }
+            guard let response = response as? HTTPURLResponse else {
+                DispatchQueue.main.async { completionHandler(nil, BoxCastError.unknown) }
+                return
+            }
+            DispatchQueue.main.async { completionHandler(response, nil) }
+        }
+        task.resume()
+    }
 }
