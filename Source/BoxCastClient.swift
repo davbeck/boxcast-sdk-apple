@@ -149,7 +149,7 @@ public class BoxCastClient {
         task.resume()
     }
     
-    public func post(url: String, parameters: [String : Any], completionHandler: @escaping (URLResponse?, Error?) -> Void) {
+    public func post(url: String, parameters: [String : Any], completionHandler: @escaping (HTTPURLResponse?, Error?) -> Void) {
         guard let url = URL(string: url) else {
             return completionHandler(nil, BoxCastError.invalidURL)
         }
