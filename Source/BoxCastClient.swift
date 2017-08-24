@@ -78,14 +78,14 @@ public class BoxCastClient {
                 return
             }
             guard let data = data else {
-                DispatchQueue.main.async { completionHandler(nil, BoxCastError.unknown) }
+                completionHandler(nil, BoxCastError.unknown)
                 return
             }
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                DispatchQueue.main.async { completionHandler(json, nil) }
+                completionHandler(json, nil)
             } catch {
-                DispatchQueue.main.async { completionHandler(nil, error) }
+                completionHandler(nil, error)
             }
         }
     }
