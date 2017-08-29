@@ -68,7 +68,7 @@ public enum BoxCastError: Error {
 }
 
 extension BoxCastError {
-    init?(responseData: Data) {
+    public init?(responseData: Data) {
         guard let dict = try? JSONSerialization.jsonObject(with: responseData, options: []) as! [String : Any] else {
             return nil
         }
