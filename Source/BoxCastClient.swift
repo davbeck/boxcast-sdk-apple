@@ -71,6 +71,10 @@ public class BoxCastClient {
                 completionHandler: completionHandler)
     }
     
+    public func delete(url: String, completionHandler: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
+        request(url: url, method: "DELETE", parameters: nil, completionHandler: completionHandler)
+    }
+    
     private func requestJSON(for url: String, method: String, parameters: [String : Any]?, completionHandler: @escaping (Any?, Error?) -> Void) {
         request(url: url, method: method, parameters: parameters) { (response, data, error) in
             if let error = error {
