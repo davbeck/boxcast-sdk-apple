@@ -51,7 +51,7 @@ public class BoxCastClient {
                     completionHandler: completionHandler)
     }
     
-    public func postJSON(for url: String, parameters: [String : Any], completionHandler: @escaping (Any?, Error?) -> Void) {
+    public func postJSON(for url: String, parameters: [String : Any]?, completionHandler: @escaping (Any?, Error?) -> Void) {
         requestJSON(for: url, method: "POST", parameters: parameters,
                     completionHandler: completionHandler)
     }
