@@ -1,6 +1,62 @@
 {
   "warnings": [
     {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
+      "line": 11,
+      "symbol": "PublicScope",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
+      "line": 23,
+      "symbol": "BoxCastScopable",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
+      "line": 74,
+      "symbol": "BoxCastClient.getJSON(for:parameters:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
+      "line": 79,
+      "symbol": "BoxCastClient.postJSON(for:parameters:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
+      "line": 84,
+      "symbol": "BoxCastClient.putJSON(for:parameters:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
+      "line": 89,
+      "symbol": "BoxCastClient.post(path:parameters:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
+      "line": 94,
+      "symbol": "BoxCastClient.get(path:parameters:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
+      "line": 99,
+      "symbol": "BoxCastClient.delete(path:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastPlayer.swift",
       "line": 52,
       "symbol": "BoxCastPlayer.observeValue(forKeyPath:of:change:context:)",
@@ -9,9 +65,9 @@
     },
     {
       "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Errors.swift",
-      "line": 17,
-      "symbol": "BoxCastError.unknown",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 71,
+      "symbol": "BoxCastError.init(responseData:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {

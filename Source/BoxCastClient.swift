@@ -27,6 +27,8 @@ public protocol BoxCastScopable {
 }
 
 /// The client for the BoxCast API. Use the client to access resources of the BoxCast ecosystem.
+///
+/// Make sure to call `BoxCastClient.setUp()` before using the `sharedClient`.
 public class BoxCastClient {
     
     let session: URLSession
@@ -34,6 +36,9 @@ public class BoxCastClient {
     
     // MARK: - Setup
     
+    /// Sets up the shared client. This must be called in order to use `sharedClient`.
+    ///
+    /// - Parameter scope: The scope for the client. Defaults to the public scope.
     public static func setUp(scope: BoxCastScopable = PublicScope()) {
         guard sharedClient == nil else {
             print("BoxCast has already been set up")

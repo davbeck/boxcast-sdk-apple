@@ -101,7 +101,7 @@
 <span class="n">use_frameworks!</span>
 
 <span class="n">target</span> <span class="s1">'&lt;Your Target Name&gt;'</span> <span class="k">do</span>
-    <span class="n">pod</span> <span class="s1">'BoxCast'</span><span class="p">,</span> <span class="s1">'~&gt; 0.2'</span>
+    <span class="n">pod</span> <span class="s1">'BoxCast'</span><span class="p">,</span> <span class="s1">'~&gt; 0.3'</span>
 <span class="k">end</span>
 </code></pre>
 
@@ -118,7 +118,7 @@
 <span class="gp">$ </span>brew install carthage
 </code></pre></li>
 <li><p>Edit your <code>Cartfile</code> to integrate BoxCast into your Xcode project:</p>
-<pre class="highlight plaintext"><code>github "boxcast/boxcast-sdk-apple" ~&gt; 0.2
+<pre class="highlight plaintext"><code>github "boxcast/boxcast-sdk-apple" ~&gt; 0.3
 </code></pre></li>
 <li><p>Run <code>carthage update</code>. This will fetch BoxCast into a <code>Carthage/Checkouts</code> folder and build the framework.</p></li>
 <li><p>On your application targets’ “General” settings tab, in the “Linked Frameworks and Libraries” section, drag and drop <code>BoxCast.framework</code> from the <code>Carthage/Build</code> folder.</p></li>
@@ -134,11 +134,23 @@ $(SRCROOT)/Carthage/Build/iOS/Alamofire.framework
 <h2 id='usage' class='heading'>Usage</h2>
 
 <p>Before you get started make sure to grab the id of the channel you want to get broadcasts from. This can be found on your <a href="https://dashboard.boxcast.com/#/channels">BoxCast Broadcaster Dashboard</a>.</p>
+<h3 id='set-up' class='heading'>Set Up</h3>
+
+<p>In your AppDelegate you will want to make sure you call the <code>setUp</code> function on the <code>BoxCastClient</code>. This will in turn create the <code>sharedClient</code> for you to use.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">BoxCast</span>
+
+<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+
+    <span class="kt">BoxCastClient</span><span class="o">.</span><span class="nf">setUp</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
 <h3 id='accessing-resources' class='heading'>Accessing Resources</h3>
 <h4 id='get-live-broadcasts' class='heading'>Get Live Broadcasts</h4>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">BoxCast</span>
 
-<span class="kt">BoxCastClient</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">getLiveBroadcasts</span><span class="p">(</span><span class="nv">channelId</span><span class="p">:</span> <span class="s">"YOUR_CHANNEL_ID"</span><span class="p">)</span> <span class="p">{</span> <span class="n">broadcasts</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+<span class="kt">BoxCastClient</span><span class="o">.</span><span class="n">sharedClient</span><span class="p">?</span><span class="o">.</span><span class="nf">getLiveBroadcasts</span><span class="p">(</span><span class="nv">channelId</span><span class="p">:</span> <span class="s">"YOUR_CHANNEL_ID"</span><span class="p">)</span> <span class="p">{</span> <span class="n">broadcasts</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
     <span class="k">if</span> <span class="k">let</span> <span class="nv">broadcasts</span> <span class="o">=</span> <span class="n">broadcasts</span> <span class="p">{</span>
         <span class="c1">// Do something special with the live broadcasts.</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -149,7 +161,7 @@ $(SRCROOT)/Carthage/Build/iOS/Alamofire.framework
 <h4 id='get-archived-broadcasts' class='heading'>Get Archived Broadcasts</h4>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">BoxCast</span>
 
-<span class="kt">BoxCastClient</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">getArchivedBroadcasts</span><span class="p">(</span><span class="nv">channelId</span><span class="p">:</span> <span class="s">"YOUR_CHANNEL_ID"</span><span class="p">)</span> <span class="p">{</span> <span class="n">broadcasts</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+<span class="kt">BoxCastClient</span><span class="o">.</span><span class="n">sharedClient</span><span class="p">?</span><span class="o">.</span><span class="nf">getArchivedBroadcasts</span><span class="p">(</span><span class="nv">channelId</span><span class="p">:</span> <span class="s">"YOUR_CHANNEL_ID"</span><span class="p">)</span> <span class="p">{</span> <span class="n">broadcasts</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
     <span class="k">if</span> <span class="k">let</span> <span class="nv">broadcasts</span> <span class="o">=</span> <span class="n">broadcasts</span> <span class="p">{</span>
         <span class="c1">// Do something special with the archived broadcasts.</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -160,7 +172,7 @@ $(SRCROOT)/Carthage/Build/iOS/Alamofire.framework
 <h4 id='get-broadcast' class='heading'>Get Broadcast</h4>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">BoxCast</span>
 
-<span class="kt">BoxCastClient</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">getBroadcast</span><span class="p">(</span><span class="nv">broadcastId</span><span class="p">:</span> <span class="s">"BROADCAST_ID"</span><span class="p">)</span> <span class="p">{</span> <span class="n">broadcast</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+<span class="kt">BoxCastClient</span><span class="o">.</span><span class="n">sharedClient</span><span class="p">?</span><span class="o">.</span><span class="nf">getBroadcast</span><span class="p">(</span><span class="nv">broadcastId</span><span class="p">:</span> <span class="s">"BROADCAST_ID"</span><span class="p">)</span> <span class="p">{</span> <span class="n">broadcast</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
     <span class="k">if</span> <span class="k">let</span> <span class="nv">broadcast</span> <span class="o">=</span> <span class="n">broadcast</span> <span class="p">{</span>
         <span class="c1">// Do something special with the broadcast.</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -169,7 +181,9 @@ $(SRCROOT)/Carthage/Build/iOS/Alamofire.framework
 <span class="p">}</span>
 </code></pre>
 <h4 id='get-broadcast-view' class='heading'>Get Broadcast View</h4>
-<pre class="highlight swift"><code><span class="kt">BoxCastClient</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">getBroadcastView</span><span class="p">(</span><span class="nv">broadcastId</span><span class="p">:</span> <span class="s">"BROADCAST_ID"</span><span class="p">)</span> <span class="p">{</span> <span class="n">broadcastView</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">BoxCast</span>
+
+<span class="kt">BoxCastClient</span><span class="o">.</span><span class="n">sharedClient</span><span class="p">?</span><span class="o">.</span><span class="nf">getBroadcastView</span><span class="p">(</span><span class="nv">broadcastId</span><span class="p">:</span> <span class="s">"BROADCAST_ID"</span><span class="p">)</span> <span class="p">{</span> <span class="n">broadcastView</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
     <span class="k">if</span> <span class="k">let</span> <span class="nv">broadcastView</span> <span class="o">=</span> <span class="n">broadcastView</span> <span class="p">{</span>
         <span class="c1">// Do something special with the broadcast view.</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
