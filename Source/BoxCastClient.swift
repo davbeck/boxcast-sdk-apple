@@ -82,21 +82,21 @@ public class BoxCastClient {
     }
     
     public func post(path: String, parameters: [String : Any], completionHandler: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
-        request(url: "\(scope.apiURL)/\(path)", method: "POST", parameters: parameters,
+        request(url: "\(scope.apiURL)\(path)", method: "POST", parameters: parameters,
                 completionHandler: completionHandler)
     }
     
     public func get(path: String, parameters: [String : Any], completionHandler: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
-        request(url: "\(scope.apiURL)/\(path)", method: "GET", parameters: parameters,
+        request(url: "\(scope.apiURL)\(path)", method: "GET", parameters: parameters,
                 completionHandler: completionHandler)
     }
     
     public func delete(path: String, completionHandler: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
-        request(url: "\(scope.apiURL)/\(path)", method: "DELETE", parameters: nil, completionHandler: completionHandler)
+        request(url: "\(scope.apiURL)\(path)", method: "DELETE", parameters: nil, completionHandler: completionHandler)
     }
     
     private func requestJSON(for path: String, method: String, parameters: [String : Any]?, completionHandler: @escaping (Any?, Error?) -> Void) {
-        request(url: "\(scope.apiURL)/\(path)", method: method, parameters: parameters) { (response, data, error) in
+        request(url: "\(scope.apiURL)\(path)", method: method, parameters: parameters) { (response, data, error) in
             if let error = error {
                 completionHandler(nil, error)
                 return
