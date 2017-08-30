@@ -68,8 +68,7 @@ class BroadcastViewController: UIViewController {
             return
         }
         
-        BoxCastClient.sharedClient?.getBroadcast(broadcastId: broadcast.id,
-                                          channelId: broadcast.channelId) { broadcast, error in
+        BoxCastClient.sharedClient?.getBroadcast(broadcastId: broadcast.id, channelId: broadcast.channelId) { broadcast, error in
             if let broadcast = broadcast {
                 let formatter = DateFormatter()
                 formatter.dateStyle = .medium
