@@ -35,7 +35,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'BoxCast', '~> 0.2'
+    pod 'BoxCast', '~> 0.3'
 end
 ```
 
@@ -59,7 +59,7 @@ $ pod install
 2. Edit your `Cartfile` to integrate BoxCast into your Xcode project:
 
 	```ogdl
-	github "boxcast/boxcast-sdk-apple" ~> 0.2
+	github "boxcast/boxcast-sdk-apple" ~> 0.3
 	```
 
 3. Run `carthage update`. This will fetch BoxCast into a `Carthage/Checkouts` folder and build the framework.
@@ -83,6 +83,21 @@ $ pod install
 
 Before you get started make sure to grab the id of the channel you want to get broadcasts from. This can be found on your [BoxCast Broadcaster Dashboard](https://dashboard.boxcast.com/#/channels).
 
+### Set Up
+
+In your AppDelegate you will want to make sure you call the `setUp` function on the `BoxCastClient`. This will in turn create the `sharedClient` for you to use.
+
+```swift
+import BoxCast
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+    BoxCastClient.setUp()
+    
+    return true
+}
+```
+
 ### Accessing Resources
 
 #### Get Live Broadcasts
@@ -90,7 +105,7 @@ Before you get started make sure to grab the id of the channel you want to get b
 ```swift
 import BoxCast
 
-BoxCastClient.shared.getLiveBroadcasts(channelId: "YOUR_CHANNEL_ID") { broadcasts, error in
+BoxCastClient.sharedClient?.getLiveBroadcasts(channelId: "YOUR_CHANNEL_ID") { broadcasts, error in
     if let broadcasts = broadcasts {
         // Do something special with the live broadcasts.
     } else {
@@ -104,7 +119,7 @@ BoxCastClient.shared.getLiveBroadcasts(channelId: "YOUR_CHANNEL_ID") { broadcast
 ```swift
 import BoxCast
 
-BoxCastClient.shared.getArchivedBroadcasts(channelId: "YOUR_CHANNEL_ID") { broadcasts, error in
+BoxCastClient.sharedClient?.getArchivedBroadcasts(channelId: "YOUR_CHANNEL_ID") { broadcasts, error in
     if let broadcasts = broadcasts {
         // Do something special with the archived broadcasts.
     } else {
@@ -118,7 +133,7 @@ BoxCastClient.shared.getArchivedBroadcasts(channelId: "YOUR_CHANNEL_ID") { broad
 ```swift
 import BoxCast
 
-BoxCastClient.shared.getBroadcast(broadcastId: "BROADCAST_ID") { broadcast, error in
+BoxCastClient.sharedClient?.getBroadcast(broadcastId: "BROADCAST_ID") { broadcast, error in
     if let broadcast = broadcast {
         // Do something special with the broadcast.
     } else {
@@ -130,7 +145,9 @@ BoxCastClient.shared.getBroadcast(broadcastId: "BROADCAST_ID") { broadcast, erro
 #### Get Broadcast View
 
 ```swift
-BoxCastClient.shared.getBroadcastView(broadcastId: "BROADCAST_ID") { broadcastView, error in
+import BoxCast
+
+BoxCastClient.sharedClient?.getBroadcastView(broadcastId: "BROADCAST_ID") { broadcastView, error in
     if let broadcastView = broadcastView {
         // Do something special with the broadcast view.
     } else {
