@@ -12,71 +12,91 @@ public struct PublicScope: BoxCastScopable {
     public var isAuthorized: Bool {
         return true
     }
+    public var apiURL: String {
+        return "https://api.boxcast.com"
+    }
+    public var additionalHeaders: [String : String]? {
+        return nil
+    }
 }
 
 public protocol BoxCastScopable {
     var isAuthorized: Bool { get }
+    var apiURL: String { get }
+    var additionalHeaders: [String : String]? { get }
 }
 
 /// The client for the BoxCast API. Use the client to access resources of the BoxCast ecosystem.
 public class BoxCastClient {
     
-    public let apiURL = "https://api.boxcast.com"
     let session: URLSession
+    let scope: BoxCastScopable
     
     // MARK: - Setup
     
     public static func setUp(scope: BoxCastScopable = PublicScope()) {
-        
+        guard sharedClient == nil else {
+            print("BoxCast has already been set up")
+            return
+        }
+        sharedClient = BoxCastClient(scope: scope)
     }
     
     // MARK: - Shared Instance
     
     /// The shared singleton object to be used for accessing resources.
-    public static let shared = BoxCastClient()
+    public static var sharedClient: BoxCastClient?
     
-    internal convenience init() {
+    internal convenience init(scope: BoxCastScopable = PublicScope()) {
         let configuration = URLSessionConfiguration.default
-        self.init(configuration: configuration)
+        self.init(scope: scope, configuration: configuration)
     }
     
-    internal init(configuration: URLSessionConfiguration) {
+    internal init(scope: BoxCastScopable, configuration: URLSessionConfiguration) {
+        self.scope = scope
         session = URLSession(configuration: configuration)
+    }
+    
+    // MARK: - Public
+    
+    /// Returns a boolean indicating if the client is authorized.
+    public var isAuthorized: Bool {
+        return scope.isAuthorized
     }
     
     // MARK: - Request
     
-    public func getJSON(for url: String, parameters: [String : Any]? = nil, completionHandler: @escaping (Any?, Error?) -> Void) {
-        requestJSON(for: url, method: "GET", parameters: parameters,
+    public func getJSON(for path: String, parameters: [String : Any]? = nil, completionHandler: @escaping (Any?, Error?) -> Void) {
+        requestJSON(for: path, method: "GET", parameters: parameters,
                     completionHandler: completionHandler)
     }
     
-    public func postJSON(for url: String, parameters: [String : Any]?, completionHandler: @escaping (Any?, Error?) -> Void) {
-        requestJSON(for: url, method: "POST", parameters: parameters,
+    public func postJSON(for path: String, parameters: [String : Any]?, completionHandler: @escaping (Any?, Error?) -> Void) {
+        requestJSON(for: path, method: "POST", parameters: parameters,
                     completionHandler: completionHandler)
     }
     
-    public func putJSON(for url: String, parameters: [String : Any], completionHandler: @escaping (Any?, Error?) -> Void) {
-        requestJSON(for: url, method: "PUT", parameters: parameters,
+    public func putJSON(for path: String, parameters: [String : Any], completionHandler: @escaping (Any?, Error?) -> Void) {
+        requestJSON(for: path, method: "PUT", parameters: parameters,
                     completionHandler: completionHandler)
     }
     
-    public func post(url: String, parameters: [String : Any], completionHandler: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
-        request(url: url, method: "POST", parameters: parameters,
+    public func post(path: String, parameters: [String : Any], completionHandler: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
+        request(url: "\(scope.apiURL)/\(path)", method: "POST", parameters: parameters,
                 completionHandler: completionHandler)
     }
     
-    public func get(url: String, parameters: [String : Any], completionHandler: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
-        request(url: url, method: "GET", parameters: parameters,
+    public func get(path: String, parameters: [String : Any], completionHandler: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
+        request(url: "\(scope.apiURL)/\(path)", method: "GET", parameters: parameters,
                 completionHandler: completionHandler)
     }
     
-    public func delete(url: String, completionHandler: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
-        request(url: url, method: "DELETE", parameters: nil, completionHandler: completionHandler)
+    public func delete(path: String, completionHandler: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
+        request(url: "\(scope.apiURL)/\(path)", method: "DELETE", parameters: nil, completionHandler: completionHandler)
     }
     
-    private func requestJSON(for url: String, method: String, parameters: [String : Any]?, completionHandler: @escaping (Any?, Error?) -> Void) {
-        request(url: url, method: method, parameters: parameters) { (response, data, error) in
+    private func requestJSON(for path: String, method: String, parameters: [String : Any]?, completionHandler: @escaping (Any?, Error?) -> Void) {
+        request(url: "\(scope.apiURL)/\(path)", method: method, parameters: parameters) { (response, data, error) in
             if let error = error {
                 completionHandler(nil, error)
                 return
@@ -112,6 +132,11 @@ public class BoxCastClient {
             }
         } catch {
             completionHandler(nil, nil, error)
+        }
+        if let headers = scope.additionalHeaders {
+            for (key, value) in headers {
+                request.setValue(value, forHTTPHeaderField: key)
+            }
         }
         let task = session.dataTask(with: request) { (data, response, error) in
             guard error == nil else {

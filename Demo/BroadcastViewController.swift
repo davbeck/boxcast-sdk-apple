@@ -68,7 +68,7 @@ class BroadcastViewController: UIViewController {
             return
         }
         
-        BoxCastClient.shared.getBroadcast(broadcastId: broadcast.id,
+        BoxCastClient.sharedClient?.getBroadcast(broadcastId: broadcast.id,
                                           channelId: broadcast.channelId) { broadcast, error in
             if let broadcast = broadcast {
                 let formatter = DateFormatter()
@@ -92,7 +92,7 @@ class BroadcastViewController: UIViewController {
             return
         }
         
-        BoxCastClient.shared.getBroadcastView(broadcastId: broadcast.id) { view, error in
+        BoxCastClient.sharedClient?.getBroadcastView(broadcastId: broadcast.id) { view, error in
             if let view = view {
                 self.broadcastView = view
                 self.playButton.isEnabled = true

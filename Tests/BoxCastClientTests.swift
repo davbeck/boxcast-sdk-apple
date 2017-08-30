@@ -12,8 +12,8 @@ import XCTest
 class BoxCastClientTests: XCTestCase {
     
     func testApiEndpoint() {
-        let client = BoxCastClient()
-        XCTAssertEqual(client.apiURL, "https://api.boxcast.com")
+        let client = BoxCastClient(scope: PublicScope())
+        XCTAssertEqual(client.scope.apiURL, "https://api.boxcast.com")
     }
     
 }

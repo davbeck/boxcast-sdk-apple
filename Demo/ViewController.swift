@@ -11,7 +11,7 @@ import BoxCast
 
 class ViewController: UITableViewController {
     
-    let channelId = "qdtdsa56dbclah0lzeqp"
+    let channelId = "xwbotjd2t4nsqgovd5gv"
     var liveBroadcasts: BroadcastList = []
     var archivedBroadcasts: BroadcastList = []
 
@@ -93,7 +93,7 @@ class ViewController: UITableViewController {
             fatalError("Set channelId at the top of this file to load valid broadcasts.")
         }
         
-        BoxCastClient.shared.getLiveBroadcasts(channelId: channelId) { liveBroadcasts, error in
+        BoxCastClient.sharedClient?.getLiveBroadcasts(channelId: channelId) { liveBroadcasts, error in
             if let liveBroadcasts = liveBroadcasts {
                 self.liveBroadcasts = liveBroadcasts
                 self.tableView.reloadData()
@@ -102,7 +102,7 @@ class ViewController: UITableViewController {
             }
         }
 
-        BoxCastClient.shared.getArchivedBroadcasts(channelId: channelId) { archivedBroadcasts, error in
+        BoxCastClient.sharedClient?.getArchivedBroadcasts(channelId: channelId) { archivedBroadcasts, error in
             if let archivedBroadcasts = archivedBroadcasts {
                 self.archivedBroadcasts = archivedBroadcasts
                 self.tableView.reloadData()

@@ -42,7 +42,7 @@ extension BoxCastClient {
     ///   - channelId: The channel id.
     ///   - completionHandler: The handler to be called upon completion.
     public func getBroadcast(broadcastId: String, channelId: String, completionHandler: @escaping ((Broadcast?, Error?) -> Void)) {
-        getJSON(for: "\(apiURL)/broadcasts/\(broadcastId)") { (json, error) in
+        getJSON(for: "/broadcasts/\(broadcastId)") { (json, error) in
             if let json = json {
                 do {
                     let broadcast = try Broadcast(channelId: channelId, json: json)
@@ -66,7 +66,7 @@ extension BoxCastClient {
         let params = [
             "q" : query.build()
         ]
-        getJSON(for: "\(apiURL)/channels/\(channelId)/broadcasts", parameters: params) { (json, error) in
+        getJSON(for: "/channels/\(channelId)/broadcasts", parameters: params) { (json, error) in
             if let json = json {
                 do {
                     let broadcastList = try BroadcastList(channelId: channelId, json: json)

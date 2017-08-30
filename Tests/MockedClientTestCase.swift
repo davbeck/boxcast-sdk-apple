@@ -19,7 +19,7 @@ class MockedClientTestCase: XCTestCase {
         // Set up mocking of the responses.
         let configuration = URLSessionConfiguration.default
         configuration.protocolClasses?.insert(MockedURLProtocol.self, at: 0)
-        client = BoxCastClient(configuration: configuration)
+        client = BoxCastClient(scope: PublicScope(), configuration: configuration)
     }
     
     func fixtureData(for name: String) -> Data? {
