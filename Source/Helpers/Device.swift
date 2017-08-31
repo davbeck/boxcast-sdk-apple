@@ -7,13 +7,10 @@
 //
 
 import Foundation
-#if os(iOS)
-import UIKit
-#endif
 
-class Device {
+public struct Device {
 
-    static var modelIdentifierString: String {
+    public static var modelIdentifierString: String {
         #if os(iOS)
             var systemInfo = utsname()
             uname(&systemInfo)
