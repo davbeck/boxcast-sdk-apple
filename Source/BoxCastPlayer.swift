@@ -218,8 +218,8 @@ class RepeatingTimer {
 }
 
 class TimerAction {
-    let block: (Void) -> Void
-    init(block: @escaping (Void) -> Void) {
+    let block: () -> Void
+    init(block: @escaping () -> Void) {
         self.block = block
     }
 }
