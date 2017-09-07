@@ -87,11 +87,11 @@ public class BoxCastPlayer : AVPlayer {
     
     // MARK: - Notifications
     
-    func playerItemDidPlayToEndTime(_ sender: AnyObject?) {
+    @objc func playerItemDidPlayToEndTime(_ sender: AnyObject?) {
         sendCompleteMetric()
     }
     
-    func playerItemTimeJumped(_ sender: AnyObject?) {
+    @objc func playerItemTimeJumped(_ sender: AnyObject?) {
         sendSeekMetric()
     }
     

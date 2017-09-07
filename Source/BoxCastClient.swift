@@ -9,6 +9,7 @@
 import Foundation
 
 public struct PublicScope: BoxCastScopable {
+    public init() {}
     public var isAuthorized: Bool {
         return true
     }
