@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'BoxCast'
-  s.version = '0.3.0'
+  s.version = '0.4.0'
   s.license = 'MIT'
   s.summary = 'BoxCast is a SDK for integrating with the BoxCast API on Apple platforms.'
   s.homepage = 'https://github.com/boxcast/boxcast-sdk-apple'
