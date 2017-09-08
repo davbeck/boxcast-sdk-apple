@@ -14,8 +14,8 @@ The official BoxCast SDK for integrating with the BoxCast API on Apple platforms
 ## Requirements
 
 - iOS 9.0+ | macOS 10.12+
-- Xcode 8.2+
-- Swift 3.0+
+- Xcode 9.0+
+- Swift 4.0+
 
 ## Installation
 
@@ -35,7 +35,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'BoxCast', '~> 0.3'
+    pod 'BoxCast', '~> 0.4'
 end
 ```
 
@@ -59,7 +59,7 @@ $ pod install
 2. Edit your `Cartfile` to integrate BoxCast into your Xcode project:
 
 	```ogdl
-	github "boxcast/boxcast-sdk-apple" ~> 0.3
+	github "boxcast/boxcast-sdk-apple" ~> 0.4
 	```
 
 3. Run `carthage update`. This will fetch BoxCast into a `Carthage/Checkouts` folder and build the framework.
@@ -76,7 +76,6 @@ $ pod install
 
 	```
 	$(SRCROOT)/Carthage/Build/iOS/BoxCast.framework
-	$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework
 	```
 
 ## Usage
