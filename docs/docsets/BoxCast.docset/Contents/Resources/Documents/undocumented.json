@@ -16,49 +16,42 @@
     },
     {
       "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
-      "line": 37,
-      "symbol": "BoxCastClient.setUp(scope:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
-      "line": 69,
+      "line": 74,
       "symbol": "BoxCastClient.getJSON(for:parameters:completionHandler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
-      "line": 74,
+      "line": 79,
       "symbol": "BoxCastClient.postJSON(for:parameters:completionHandler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
-      "line": 79,
+      "line": 84,
       "symbol": "BoxCastClient.putJSON(for:parameters:completionHandler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
-      "line": 84,
+      "line": 89,
       "symbol": "BoxCastClient.post(path:parameters:completionHandler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
-      "line": 89,
+      "line": 94,
       "symbol": "BoxCastClient.get(path:parameters:completionHandler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
-      "line": 94,
+      "line": 99,
       "symbol": "BoxCastClient.delete(path:completionHandler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

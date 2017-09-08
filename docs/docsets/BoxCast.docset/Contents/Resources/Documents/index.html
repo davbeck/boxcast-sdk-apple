@@ -42,7 +42,7 @@
                 <a href="Structs/Broadcast.html">Broadcast</a>
               </li>
               <li class="nav-group-task">
-                <a href="Models.html#/s:V7BoxCast13BroadcastView">BroadcastView</a>
+                <a href="Models.html#/s:7BoxCast13BroadcastViewV">BroadcastView</a>
               </li>
             </ul>
           </li>
@@ -85,8 +85,8 @@
 
 <ul>
 <li>iOS 9.0+ | macOS 10.12+</li>
-<li>Xcode 8.2+</li>
-<li>Swift 3.0+</li>
+<li>Xcode 9.0+</li>
+<li>Swift 4.0+</li>
 </ul>
 <h2 id='installation' class='heading'>Installation</h2>
 <h3 id='cocoapods' class='heading'>Cocoapods</h3>
@@ -101,7 +101,7 @@
 <span class="n">use_frameworks!</span>
 
 <span class="n">target</span> <span class="s1">'&lt;Your Target Name&gt;'</span> <span class="k">do</span>
-    <span class="n">pod</span> <span class="s1">'BoxCast'</span><span class="p">,</span> <span class="s1">'~&gt; 0.3'</span>
+    <span class="n">pod</span> <span class="s1">'BoxCast'</span><span class="p">,</span> <span class="s1">'~&gt; 0.4'</span>
 <span class="k">end</span>
 </code></pre>
 
@@ -118,7 +118,7 @@
 <span class="gp">$ </span>brew install carthage
 </code></pre></li>
 <li><p>Edit your <code>Cartfile</code> to integrate BoxCast into your Xcode project:</p>
-<pre class="highlight plaintext"><code>github "boxcast/boxcast-sdk-apple" ~&gt; 0.3
+<pre class="highlight plaintext"><code>github "boxcast/boxcast-sdk-apple" ~&gt; 0.4
 </code></pre></li>
 <li><p>Run <code>carthage update</code>. This will fetch BoxCast into a <code>Carthage/Checkouts</code> folder and build the framework.</p></li>
 <li><p>On your application targets’ “General” settings tab, in the “Linked Frameworks and Libraries” section, drag and drop <code>BoxCast.framework</code> from the <code>Carthage/Build</code> folder.</p></li>
@@ -128,7 +128,6 @@
 
 <p>and add the paths to the frameworks you want to use under “Input Files”, e.g.:</p>
 <pre class="highlight plaintext"><code>$(SRCROOT)/Carthage/Build/iOS/BoxCast.framework
-$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework
 </code></pre></li>
 </ol>
 <h2 id='usage' class='heading'>Usage</h2>
