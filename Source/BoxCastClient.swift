@@ -126,10 +126,18 @@ public class BoxCastClient {
         
         do {
             if let parameters = parameters {
-                let data = try JSONSerialization.data(withJSONObject: parameters,
-                                                      options: .prettyPrinted)
-                request.httpBody = data
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                if method == "GET" {
+                    let encodedParameters = parameters.mapValues { "\($0)".stringByAddingPercentEncodingForRFC3986() ?? ""  }
+                    let query = encodedParameters.map { "\($0.key)=\($0.value)" }.joined(separator: "&")
+                    var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
+                    urlComponents?.percentEncodedQuery = query
+                    request.url = urlComponents?.url
+                } else {
+                    let data = try JSONSerialization.data(withJSONObject: parameters,
+                                                          options: .prettyPrinted)
+                    request.httpBody = data
+                    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                }
             }
         } catch {
             completionHandler(nil, nil, error)

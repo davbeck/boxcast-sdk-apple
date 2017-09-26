@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4107E6DE1F7AC7270019B403 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107E6DD1F7AC7270019B403 /* String.swift */; };
+		4107E6DF1F7AC7270019B403 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107E6DD1F7AC7270019B403 /* String.swift */; };
 		411FC1AA1ECB86880034C4F3 /* InfoPlistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FC1A81ECB856B0034C4F3 /* InfoPlistTests.swift */; };
 		411FC1AC1ECB87CB0034C4F3 /* QueryBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FC1AB1ECB87CB0034C4F3 /* QueryBuilderTests.swift */; };
 		411FC1AF1ECB8AF90034C4F3 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FC1AD1ECB8ABD0034C4F3 /* Device.swift */; };
@@ -109,6 +111,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4107E6DD1F7AC7270019B403 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		411FC1A81ECB856B0034C4F3 /* InfoPlistTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPlistTests.swift; sourceTree = "<group>"; };
 		411FC1AB1ECB87CB0034C4F3 /* QueryBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryBuilderTests.swift; sourceTree = "<group>"; };
 		411FC1AD1ECB8ABD0034C4F3 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
@@ -305,6 +308,7 @@
 				419665261F2B9FC500CBB9A8 /* Formatters.swift */,
 				41FB6D671EC8CD5900C9EC8C /* InfoPlist.swift */,
 				41FB6D2F1EC77DD700C9EC8C /* QueryBuilder.swift */,
+				4107E6DD1F7AC7270019B403 /* String.swift */,
 				41FB6D741ECA482C00C9EC8C /* System.swift */,
 				41FB6D6F1EC9EF5900C9EC8C /* UserDefaults.swift */,
 			);
@@ -564,6 +568,7 @@
 				41C5C9031ECC7F4200EFD295 /* BoxCastPlayer.swift in Sources */,
 				4138E5071F461311007975AE /* BroadcastViewRoutes.swift in Sources */,
 				41C5C9051ECC7F4200EFD295 /* Metrics.swift in Sources */,
+				4107E6DF1F7AC7270019B403 /* String.swift in Sources */,
 				41C5C9061ECC7F4200EFD295 /* Device.swift in Sources */,
 				41C5C90B1ECC7F4200EFD295 /* Broadcast.swift in Sources */,
 			);
@@ -602,6 +607,7 @@
 				41FB6D661EC8C5D800C9EC8C /* Metrics.swift in Sources */,
 				4138E5061F461311007975AE /* BroadcastViewRoutes.swift in Sources */,
 				41FB6D2A1EC7720300C9EC8C /* BoxCastClient.swift in Sources */,
+				4107E6DE1F7AC7270019B403 /* String.swift in Sources */,
 				411FC1AF1ECB8AF90034C4F3 /* Device.swift in Sources */,
 				41FB6D2D1EC775B800C9EC8C /* Broadcast.swift in Sources */,
 			);

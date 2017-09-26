@@ -47,8 +47,13 @@ class BoxCastClientTests: MockedClientTestCase {
         }
         
         let expectation = self.expectation(description: "GetRequest")
+        let parameters: [String:Any] = [
+            "l": 20,
+            "s": "-starts_at",
+            "q": "timeframe:current",
+        ]
         
-        client.get(path: "/get", parameters: [:]) { (response, data, error) in
+        client.get(path: "/get", parameters: parameters) { (response, data, error) in
             XCTAssertNotNil(response)
             XCTAssertNil(error)
             XCTAssertEqual(0, data?.count)
@@ -58,6 +63,7 @@ class BoxCastClientTests: MockedClientTestCase {
         waitForExpectations(timeout: 1.0, handler: nil)
         
         XCTAssertEqual(actualRequest?.httpMethod, "GET")
+        XCTAssertEqual(actualRequest?.url?.query?.removingPercentEncoding, "q=timeframe:current&s=-starts_at&l=20")
     }
     
     func testPutRequest() {

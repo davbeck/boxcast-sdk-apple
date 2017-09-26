@@ -17,6 +17,10 @@ class BroadcastRoutesTests: MockedClientTestCase {
             return
         }
         MockedURLProtocol.mockedData = data
+        var url: URL?
+        MockedURLProtocol.requestHandler = { request in
+            url = request.url
+        }
         
         let expectation = self.expectation(description: "GetLiveBroadcasts")
         var liveBroadcasts: BroadcastList?
@@ -28,6 +32,9 @@ class BroadcastRoutesTests: MockedClientTestCase {
             XCTAssertNotNil(liveBroadcasts)
             XCTAssertEqual(liveBroadcasts?.count, 1)
         }
+        
+        XCTAssertNotNil(url)
+        XCTAssertEqual(url?.query?.removingPercentEncoding, "q=timeframe:current")
     }
     
     func testGetArchivedBroadcasts() {
@@ -36,6 +43,10 @@ class BroadcastRoutesTests: MockedClientTestCase {
             return
         }
         MockedURLProtocol.mockedData = data
+        var url: URL?
+        MockedURLProtocol.requestHandler = { request in
+            url = request.url
+        }
         
         let expectation = self.expectation(description: "GetArchivedBroadcasts")
         var archivedBroadcasts: BroadcastList?
@@ -47,6 +58,9 @@ class BroadcastRoutesTests: MockedClientTestCase {
             XCTAssertNotNil(archivedBroadcasts)
             XCTAssertEqual(archivedBroadcasts?.count, 1)
         }
+        
+        XCTAssertNotNil(url)
+        XCTAssertEqual(url?.query?.removingPercentEncoding, "q=timeframe:past")
     }
     
     func testGetBroadcast() {
