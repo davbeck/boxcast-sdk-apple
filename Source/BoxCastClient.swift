@@ -122,12 +122,12 @@ public class BoxCastClient {
         
         var request = URLRequest(url: url)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = method
         
         do {
             if let parameters = parameters {
                 let data = try JSONSerialization.data(withJSONObject: parameters,
                                                       options: .prettyPrinted)
-                request.httpMethod = method
                 request.httpBody = data
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             }

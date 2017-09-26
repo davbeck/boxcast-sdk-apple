@@ -13,10 +13,13 @@ class MockedURLProtocol : URLProtocol {
     static var mockedData: Data?
     static var mockedStatusCode: Int?
     static let mockedHeaders = ["Content-Type" : "application/json; charset=utf-8"]
+    static var requestHandler: ((URLRequest) -> Void)?
     static var requestDataHandler: ((Data?) -> Void)?
     
     override func startLoading() {
         let request = self.request
+        
+        MockedURLProtocol.requestHandler?(request)
         
         if let httpBodyStream = request.httpBodyStream {
             httpBodyStream.open()
@@ -42,6 +45,7 @@ class MockedURLProtocol : URLProtocol {
         // Reset.
         MockedURLProtocol.mockedData = nil
         MockedURLProtocol.requestDataHandler = nil
+        MockedURLProtocol.requestHandler = nil
     }
     
     override func stopLoading() {
