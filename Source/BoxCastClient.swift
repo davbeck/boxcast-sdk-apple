@@ -30,7 +30,7 @@ public protocol BoxCastScopable {
 /// The client for the BoxCast API. Use the client to access resources of the BoxCast ecosystem.
 ///
 /// Make sure to call `BoxCastClient.setUp()` before using the `sharedClient`.
-public class BoxCastClient {
+open class BoxCastClient {
     
     let session: URLSession
     let scope: BoxCastScopable
