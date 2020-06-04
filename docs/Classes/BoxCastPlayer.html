@@ -14,7 +14,7 @@
     <a title="BoxCastPlayer Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">BoxCast Docs</a></p>
+        <p><a href="../index.html">BoxCast 0.5.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/boxcast/boxcast-sdk-apple"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -71,7 +71,7 @@
             <h1>BoxCastPlayer</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BoxCastPlayer</span> <span class="p">:</span> <span class="kt">AVPlayer</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BoxCastPlayer</span> <span class="p">:</span> <span class="kt">AVPlayer</span></code></pre>
 
                 </div>
               </div>
@@ -84,17 +84,19 @@
               <div class="task-name-container">
                 <a name="/Initializing%20a%20Player%20Object"></a>
                 <a name="//apple_ref/swift/Section/Initializing a Player Object" class="dashAnchor"></a>
-                <a href="#/Initializing%20a%20Player%20Object">
-                  <h3 class="section-name">Initializing a Player Object</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Initializing%20a%20Player%20Object"></a>
+                  <h3 class="section-name"><p>Initializing a Player Object</p>
+</h3>
+                </div>
               </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7BoxCast0aB6PlayerCACSgAA9BroadcastV9broadcast_AA0D4ViewV0eF0tcfc"></a>
+                    <a name="/s:7BoxCast0aB6PlayerC9broadcast0D4ViewACSgAA9BroadcastV_AA0fE0Vtcfc"></a>
                     <a name="//apple_ref/swift/Method/init(broadcast:broadcastView:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7BoxCast0aB6PlayerCACSgAA9BroadcastV9broadcast_AA0D4ViewV0eF0tcfc">init(broadcast:broadcastView:)</a>
+                    <a class="token" href="#/s:7BoxCast0aB6PlayerC9broadcast0D4ViewACSgAA9BroadcastV_AA0fE0Vtcfc">init(broadcast:<wbr>broadcastView:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -110,9 +112,41 @@ failable initializer and should be handled appropriately.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">broadcast</span><span class="p">:</span> <span class="kt"><a href="../Structs/Broadcast.html">Broadcast</a></span><span class="p">,</span> <span class="nv">broadcastView</span><span class="p">:</span> <span class="kt"><a href="../Models.html#/s:7BoxCast13BroadcastViewV">BroadcastView</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">broadcast</span><span class="p">:</span> <span class="kt"><a href="../Structs/Broadcast.html">Broadcast</a></span><span class="p">,</span> <span class="nv">broadcastView</span><span class="p">:</span> <span class="kt"><a href="../Models.html#/s:7BoxCast13BroadcastViewV">BroadcastView</a></span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>broadcast</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The broadcast for playback. This must be a detailed broadcast or the 
+       initializer will fail.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>broadcastView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The broadcast view for the broadcast.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -122,8 +156,8 @@ failable initializer and should be handled appropriately.</p>
           </section>
         </section>
         <section id="footer">
-          <p>© 2017 <a class="link" href="http://boxcast.com" target="_blank" rel="external">BoxCast, Inc.</a> under <a class="link" href="https://github.com/boxcast/boxcast-sdk-apple/blob/master/LICENSE" target="_blank" rel="external">open source license</a>.</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>© 2020 <a class="link" href="http://boxcast.com" target="_blank" rel="external">BoxCast, Inc.</a> under <a class="link" href="https://github.com/boxcast/boxcast-sdk-apple/blob/master/LICENSE" target="_blank" rel="external">open source license</a>.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

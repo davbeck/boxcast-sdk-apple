@@ -2,7 +2,7 @@ module: BoxCast
 author: BoxCast, Inc.
 author_url: https://www.boxcast.com/product/developers
 github_url: https://github.com/boxcast/boxcast-sdk-apple
-copyright: '© 2017 [BoxCast, Inc.](http://boxcast.com) under [open source license](https://github.com/boxcast/boxcast-sdk-apple/blob/master/LICENSE).'
+copyright: '© 2020 [BoxCast, Inc.](http://boxcast.com) under [open source license](https://github.com/boxcast/boxcast-sdk-apple/blob/master/LICENSE).'
 custom_categories:
   - name: Client
     children:

@@ -83,6 +83,41 @@
       "symbol": "BoxCastDateFormatter",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Metrics.swift",
+      "line": 53,
+      "symbol": "Metric.Action",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Metrics.swift",
+      "line": 85,
+      "symbol": "Metric",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Metrics.swift",
+      "line": 98,
+      "symbol": "Metric",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Metrics.swift",
+      "line": 104,
+      "symbol": "Metric.Action",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Models/Broadcast.swift",
+      "line": 81,
+      "symbol": "BroadcastList",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple"

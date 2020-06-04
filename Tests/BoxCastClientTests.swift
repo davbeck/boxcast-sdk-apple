@@ -63,7 +63,9 @@ class BoxCastClientTests: MockedClientTestCase {
         waitForExpectations(timeout: 1.0, handler: nil)
         
         XCTAssertEqual(actualRequest?.httpMethod, "GET")
-        XCTAssertEqual(actualRequest?.url?.query?.removingPercentEncoding, "q=timeframe:current&s=-starts_at&l=20")
+        XCTAssertTrue(actualRequest!.url!.query!.removingPercentEncoding!.contains("l=20"))
+        XCTAssertTrue(actualRequest!.url!.query!.removingPercentEncoding!.contains("s=-starts_at"))
+        XCTAssertTrue(actualRequest!.url!.query!.removingPercentEncoding!.contains("q=timeframe:current"))
     }
     
     func testPutRequest() {

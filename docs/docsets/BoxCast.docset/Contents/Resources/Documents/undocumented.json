@@ -9,49 +9,49 @@
     },
     {
       "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
-      "line": 23,
+      "line": 24,
       "symbol": "BoxCastScopable",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
       "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
-      "line": 74,
+      "line": 70,
       "symbol": "BoxCastClient.getJSON(for:parameters:completionHandler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
-      "line": 79,
+      "line": 75,
       "symbol": "BoxCastClient.postJSON(for:parameters:completionHandler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
-      "line": 84,
+      "line": 80,
       "symbol": "BoxCastClient.putJSON(for:parameters:completionHandler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
-      "line": 89,
+      "line": 85,
       "symbol": "BoxCastClient.post(path:parameters:completionHandler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
-      "line": 94,
+      "line": 90,
       "symbol": "BoxCastClient.get(path:parameters:completionHandler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/BoxCastClient.swift",
-      "line": 99,
+      "line": 95,
       "symbol": "BoxCastClient.delete(path:completionHandler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -68,6 +68,13 @@
       "line": 71,
       "symbol": "BoxCastError.init(responseData:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Helpers/Device.swift",
+      "line": 11,
+      "symbol": "Device",
+      "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {

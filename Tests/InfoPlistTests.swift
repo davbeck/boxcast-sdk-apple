@@ -12,7 +12,7 @@ import XCTest
 class InfoPlistTests: XCTestCase {
     
     func testAppName() {
-        XCTAssertEqual(InfoPlist.appName, "Unknown")
+        XCTAssertEqual(InfoPlist.appName, "xctest")
     }
     
     func testAppVersion() {
@@ -20,15 +20,15 @@ class InfoPlistTests: XCTestCase {
     }
     
     func testAppBuild() {
-        XCTAssertEqual(InfoPlist.appBuild, "Unknown")
+        XCTAssertEqual(InfoPlist.appBuild, "16091")
     }
     
     func testAppBundleIdentifier() {
-        XCTAssertEqual(InfoPlist.appBundleIndentifier, "Unknown")
+        XCTAssertEqual(InfoPlist.appBundleIndentifier, "com.apple.dt.xctest.tool")
     }
     
     func testBoxCastSDKVersion() {
-        XCTAssertEqual(InfoPlist.boxCastSDKVersion, "0.4.2")
+        XCTAssertEqual(InfoPlist.boxCastSDKVersion, "0.5.0")
     }
     
 }
