@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4156C6D1248932CE009D7D96"
-               BuildableName = "BoxCast_tvOS.framework"
+               BuildableName = "BoxCast.framework"
                BlueprintName = "BoxCast tvOS"
                ReferencedContainer = "container:BoxCast.xcodeproj">
             </BuildableReference>
@@ -61,7 +61,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4156C6D1248932CE009D7D96"
-            BuildableName = "BoxCast_tvOS.framework"
+            BuildableName = "BoxCast.framework"
             BlueprintName = "BoxCast tvOS"
             ReferencedContainer = "container:BoxCast.xcodeproj">
          </BuildableReference>
