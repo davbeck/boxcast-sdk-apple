@@ -27,7 +27,7 @@ class MockedURLProtocol : URLProtocol {
             let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: bufferSize)
             let length = httpBodyStream.read(buffer, maxLength: bufferSize)
             let httpBody = Data(bytes: buffer, count: length)
-            buffer.deallocate(capacity: bufferSize)
+            buffer.deallocate()
             MockedURLProtocol.requestDataHandler?(httpBody)
         }
         

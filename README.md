@@ -13,9 +13,9 @@ The official BoxCast SDK for integrating with the BoxCast API on Apple platforms
 
 ## Requirements
 
-- iOS 9.0+ | macOS 10.12+
-- Xcode 9.0+
-- Swift 4.0+
+- iOS 9.0+ | macOS 10.12+ | tvOS 9.0+
+- Xcode 11.0+
+- Swift 5.0+
 
 ## Installation
 
@@ -30,12 +30,11 @@ $ gem install cocoapods
 To integrate BoxCast SDK into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```ruby
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.0'
+platform :ios, '13.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'BoxCast', '~> 0.4'
+    pod 'BoxCast', '~> 0.5'
 end
 ```
 
@@ -59,7 +58,7 @@ $ pod install
 2. Edit your `Cartfile` to integrate BoxCast into your Xcode project:
 
 	```ogdl
-	github "boxcast/boxcast-sdk-apple" ~> 0.4
+	github "boxcast/boxcast-sdk-apple" ~> 0.5
 	```
 
 3. Run `carthage update`. This will fetch BoxCast into a `Carthage/Checkouts` folder and build the framework.
@@ -80,7 +79,7 @@ $ pod install
 
 ## Usage
 
-Before you get started make sure to grab the id of the channel you want to get broadcasts from. This can be found on your [BoxCast Broadcaster Dashboard](https://dashboard.boxcast.com/#/channels).
+Before you get started make sure to grab the id of the channel you want to get broadcasts from. This can be found on your [BoxCast Dashboard](https://dashboard.boxcast.com/#/channels).
 
 ### Set Up
 
@@ -89,10 +88,10 @@ In your AppDelegate you will want to make sure you call the `setUp` function on 
 ```swift
 import BoxCast
 
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
     BoxCastClient.setUp()
-    
+
     return true
 }
 ```

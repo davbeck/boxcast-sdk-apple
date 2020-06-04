@@ -11,7 +11,7 @@ import Foundation
 public struct Device {
 
     public static var modelIdentifierString: String {
-        #if os(iOS)
+        #if os(iOS) || os (tvOS)
             var systemInfo = utsname()
             uname(&systemInfo)
             let mirror = Mirror(reflecting: systemInfo.machine)

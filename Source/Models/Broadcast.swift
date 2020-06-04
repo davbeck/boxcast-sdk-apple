@@ -85,7 +85,7 @@ extension Array where Element == Broadcast {
         guard let array = json as? Array<Any> else {
             throw BoxCastError.serializationError
         }
-        let broadcasts = try array.flatMap { json in
+        let broadcasts = try array.compactMap { json in
             return try Broadcast(channelId: channelId, json: json)
         }
         self.init(broadcasts)

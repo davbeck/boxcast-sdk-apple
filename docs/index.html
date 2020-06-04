@@ -13,7 +13,7 @@
     <a title="BoxCast  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">BoxCast Docs</a></p>
+        <p><a href="index.html">BoxCast 0.5.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/boxcast/boxcast-sdk-apple"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -84,29 +84,28 @@
 <h2 id='requirements' class='heading'>Requirements</h2>
 
 <ul>
-<li>iOS 9.0+ | macOS 10.12+</li>
-<li>Xcode 9.0+</li>
-<li>Swift 4.0+</li>
+<li>iOS 9.0+ | macOS 10.12+ | tvOS 9.0+</li>
+<li>Xcode 11.0+</li>
+<li>Swift 5.0+</li>
 </ul>
 <h2 id='installation' class='heading'>Installation</h2>
 <h3 id='cocoapods' class='heading'>Cocoapods</h3>
 
 <p><a href="https://cocoapods.org">CocoaPods</a> is a dependency manager for Cocoa projects. You can install it with the following command:</p>
-<pre class="highlight shell"><code><span class="gp">$ </span>gem install cocoapods
+<pre class="highlight shell"><code><span class="nv">$ </span>gem <span class="nb">install </span>cocoapods
 </code></pre>
 
 <p>To integrate BoxCast SDK into your Xcode project using CocoaPods, specify it in your Podfile:</p>
-<pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://github.com/CocoaPods/Specs.git'</span>
-<span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'10.0'</span>
+<pre class="highlight ruby"><code><span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'13.0'</span>
 <span class="n">use_frameworks!</span>
 
 <span class="n">target</span> <span class="s1">'&lt;Your Target Name&gt;'</span> <span class="k">do</span>
-    <span class="n">pod</span> <span class="s1">'BoxCast'</span><span class="p">,</span> <span class="s1">'~&gt; 0.4'</span>
+    <span class="n">pod</span> <span class="s1">'BoxCast'</span><span class="p">,</span> <span class="s1">'~&gt; 0.5'</span>
 <span class="k">end</span>
 </code></pre>
 
 <p>Then, run the following command:</p>
-<pre class="highlight shell"><code><span class="gp">$ </span>pod install
+<pre class="highlight shell"><code><span class="nv">$ </span>pod <span class="nb">install</span>
 </code></pre>
 <h3 id='carthage' class='heading'>Carthage</h3>
 
@@ -114,11 +113,11 @@
 
 <ol>
 <li><p>Install Carthage with <a href="http://brew.sh/">Homebrew</a> using the following command:</p>
-<pre class="highlight shell"><code><span class="gp">$ </span>brew update
-<span class="gp">$ </span>brew install carthage
+<pre class="highlight shell"><code><span class="nv">$ </span>brew update
+<span class="nv">$ </span>brew <span class="nb">install </span>carthage
 </code></pre></li>
 <li><p>Edit your <code>Cartfile</code> to integrate BoxCast into your Xcode project:</p>
-<pre class="highlight plaintext"><code>github "boxcast/boxcast-sdk-apple" ~&gt; 0.4
+<pre class="highlight plaintext"><code>github "boxcast/boxcast-sdk-apple" ~&gt; 0.5
 </code></pre></li>
 <li><p>Run <code>carthage update</code>. This will fetch BoxCast into a <code>Carthage/Checkouts</code> folder and build the framework.</p></li>
 <li><p>On your application targets’ “General” settings tab, in the “Linked Frameworks and Libraries” section, drag and drop <code>BoxCast.framework</code> from the <code>Carthage/Build</code> folder.</p></li>
@@ -132,13 +131,13 @@
 </ol>
 <h2 id='usage' class='heading'>Usage</h2>
 
-<p>Before you get started make sure to grab the id of the channel you want to get broadcasts from. This can be found on your <a href="https://dashboard.boxcast.com/#/channels">BoxCast Broadcaster Dashboard</a>.</p>
+<p>Before you get started make sure to grab the id of the channel you want to get broadcasts from. This can be found on your <a href="https://dashboard.boxcast.com/#/channels">BoxCast Dashboard</a>.</p>
 <h3 id='set-up' class='heading'>Set Up</h3>
 
-<p>In your AppDelegate you will want to make sure you call the <code>setUp</code> function on the <code>BoxCastClient</code>. This will in turn create the <code>sharedClient</code> for you to use.</p>
+<p>In your AppDelegate you will want to make sure you call the <code>setUp</code> function on the <code><a href="Classes/BoxCastClient.html">BoxCastClient</a></code>. This will in turn create the <code>sharedClient</code> for you to use.</p>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">BoxCast</span>
 
-<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+<span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplication</span><span class="o">.</span><span class="kt">LaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
 
     <span class="kt">BoxCastClient</span><span class="o">.</span><span class="nf">setUp</span><span class="p">()</span>
 
@@ -192,7 +191,7 @@
 </code></pre>
 <h3 id='playback' class='heading'>Playback</h3>
 
-<p>After getting a detailed broadcast and broadcast view you can use the two resources to create an <code>BoxCastPlayer</code> object. This object is a simple sublcass of <code>AVPlayer</code> and can be used in a similar fashion.</p>
+<p>After getting a detailed broadcast and broadcast view you can use the two resources to create an <code><a href="Classes/BoxCastPlayer.html">BoxCastPlayer</a></code> object. This object is a simple sublcass of <code>AVPlayer</code> and can be used in a similar fashion.</p>
 
 <p>Below is an example of creating the player and then presenting a <code>AVPlayerViewController</code> instance with the player.</p>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">BoxCast</span>
@@ -221,8 +220,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>© 2017 <a class="link" href="http://boxcast.com" target="_blank" rel="external">BoxCast, Inc.</a> under <a class="link" href="https://github.com/boxcast/boxcast-sdk-apple/blob/master/LICENSE" target="_blank" rel="external">open source license</a>.</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>© 2020 <a class="link" href="http://boxcast.com" target="_blank" rel="external">BoxCast, Inc.</a> under <a class="link" href="https://github.com/boxcast/boxcast-sdk-apple/blob/master/LICENSE" target="_blank" rel="external">open source license</a>.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
