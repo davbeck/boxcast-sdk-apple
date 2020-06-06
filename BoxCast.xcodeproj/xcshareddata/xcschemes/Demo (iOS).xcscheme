@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "41FB6D3A1EC78D9100C9EC8C"
-               BuildableName = "Demo.app"
-               BlueprintName = "Demo"
+               BuildableName = "Demo (iOS).app"
+               BlueprintName = "Demo (iOS)"
                ReferencedContainer = "container:BoxCast.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -31,8 +31,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "41FB6D3A1EC78D9100C9EC8C"
-            BuildableName = "Demo.app"
-            BlueprintName = "Demo"
+            BuildableName = "Demo (iOS).app"
+            BlueprintName = "Demo (iOS)"
             ReferencedContainer = "container:BoxCast.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -54,8 +54,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "41FB6D3A1EC78D9100C9EC8C"
-            BuildableName = "Demo.app"
-            BlueprintName = "Demo"
+            BuildableName = "Demo (iOS).app"
+            BlueprintName = "Demo (iOS)"
             ReferencedContainer = "container:BoxCast.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -71,8 +71,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "41FB6D3A1EC78D9100C9EC8C"
-            BuildableName = "Demo.app"
-            BlueprintName = "Demo"
+            BuildableName = "Demo (iOS).app"
+            BlueprintName = "Demo (iOS)"
             ReferencedContainer = "container:BoxCast.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

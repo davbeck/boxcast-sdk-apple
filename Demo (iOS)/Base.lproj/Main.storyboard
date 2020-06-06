@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="T0k-3h-OaE">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="T0k-3h-OaE">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Broadcasts-->
         <scene sceneID="PG6-fh-vvQ">
             <objects>
-                <tableViewController id="A1l-Lw-dMw" customClass="ViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="A1l-Lw-dMw" customClass="ViewController" customModule="Demo__iOS_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yba-5i-ED6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="481-SY-yMM" id="OYV-sC-YtQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -45,7 +42,7 @@
         <!--Broadcast View Controller-->
         <scene sceneID="5Gq-jK-jab">
             <objects>
-                <viewController id="pQH-tU-0KP" customClass="BroadcastViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pQH-tU-0KP" customClass="BroadcastViewController" customModule="Demo__iOS_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DyG-oM-m9g"/>
                         <viewControllerLayoutGuide type="bottom" id="jzc-7u-GzB"/>
@@ -55,7 +52,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oS9-1K-Dh0">
-                                <rect key="frame" x="32" y="72" width="311" height="213.5"/>
+                                <rect key="frame" x="36" y="58" width="528" height="213.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qHH-T1-iHi">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="90"/>
@@ -86,7 +83,7 @@
                                         <rect key="frame" x="0.0" y="183.5" width="102" height="30"/>
                                         <state key="normal" title="Play Broadcast"/>
                                         <connections>
-                                            <action selector="playButtonTapped:" destination="pQH-tU-0KP" eventType="touchUpInside" id="1VJ-k9-XKr"/>
+                                            <action selector="playButtonTapped:" destination="pQH-tU-0KP" eventType="touchUpInside" id="3I0-VQ-2S7"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -100,11 +97,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dateLabel" destination="utR-qj-KOV" id="5Z3-XV-5lE"/>
-                        <outlet property="descriptionLabel" destination="pdf-wX-3Yj" id="ohJ-89-rmS"/>
-                        <outlet property="nameLabel" destination="Mhp-Kk-4Uf" id="etL-jB-AI8"/>
-                        <outlet property="playButton" destination="2Bw-Er-uYs" id="dGB-sq-Suz"/>
-                        <outlet property="thumbnailImageView" destination="qHH-T1-iHi" id="mG3-cU-JJm"/>
+                        <outlet property="dateLabel" destination="utR-qj-KOV" id="PLg-gJ-ZWa"/>
+                        <outlet property="descriptionLabel" destination="pdf-wX-3Yj" id="xj8-TQ-wNN"/>
+                        <outlet property="nameLabel" destination="Mhp-Kk-4Uf" id="Ohn-Pf-F4G"/>
+                        <outlet property="playButton" destination="2Bw-Er-uYs" id="VUb-hG-hfR"/>
+                        <outlet property="thumbnailImageView" destination="qHH-T1-iHi" id="BsA-7Z-IQI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x6p-CP-F9o" userLabel="First Responder" sceneMemberID="firstResponder"/>

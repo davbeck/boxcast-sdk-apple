@@ -53,6 +53,14 @@
 		4156C705248933C7009D7D96 /* LiveBroadcasts.json in Resources */ = {isa = PBXBuildFile; fileRef = 41D18B2E1F4C718200D460BC /* LiveBroadcasts.json */; };
 		4156C706248933C7009D7D96 /* View.json in Resources */ = {isa = PBXBuildFile; fileRef = 41D18B3F1F4C7B2D00D460BC /* View.json */; };
 		4156C7082489340C009D7D96 /* BoxCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4156C6D2248932CE009D7D96 /* BoxCast.framework */; };
+		41650FA7248C296B00328288 /* BoxCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4156C6D2248932CE009D7D96 /* BoxCast.framework */; };
+		41650FA8248C296B00328288 /* BoxCast.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4156C6D2248932CE009D7D96 /* BoxCast.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		41895386248C243B0017D2A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41895385248C243B0017D2A1 /* AppDelegate.swift */; };
+		41895388248C243B0017D2A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41895387248C243B0017D2A1 /* ViewController.swift */; };
+		4189538B248C243B0017D2A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41895389248C243B0017D2A1 /* Main.storyboard */; };
+		4189538D248C243D0017D2A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4189538C248C243D0017D2A1 /* Assets.xcassets */; };
+		41895390248C243D0017D2A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4189538E248C243D0017D2A1 /* LaunchScreen.storyboard */; };
+		41895396248C26030017D2A1 /* BroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41895395248C26030017D2A1 /* BroadcastViewController.swift */; };
 		419665271F2B9FC500CBB9A8 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419665261F2B9FC500CBB9A8 /* Formatters.swift */; };
 		419665281F2B9FC500CBB9A8 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419665261F2B9FC500CBB9A8 /* Formatters.swift */; };
 		41C5C9011ECC7F1F00EFD295 /* BoxCast.h in Headers */ = {isa = PBXBuildFile; fileRef = 41FB6D251EC771DA00C9EC8C /* BoxCast.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -118,6 +126,20 @@
 			remoteGlobalIDString = 4156C6D1248932CE009D7D96;
 			remoteInfo = "BoxCast tvOS";
 		};
+		41650FA5248C28C100328288 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41FB6CF31EC76C8500C9EC8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41FB6CFB1EC76C8500C9EC8C;
+			remoteInfo = "BoxCast iOS";
+		};
+		41650FA9248C296B00328288 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41FB6CF31EC76C8500C9EC8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4156C6D1248932CE009D7D96;
+			remoteInfo = "BoxCast tvOS";
+		};
 		41C5C9181ECC7F8C00EFD295 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 41FB6CF31EC76C8500C9EC8C /* Project object */;
@@ -135,6 +157,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		41650FAB248C296B00328288 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				41650FA8248C296B00328288 /* BoxCast.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		41FB6D5F1EC78FBB00C9EC8C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -160,6 +193,14 @@
 		4138E50E1F462902007975AE /* ErrorsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorsTests.swift; sourceTree = "<group>"; };
 		4156C6D2248932CE009D7D96 /* BoxCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BoxCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4156C6EE2489335F009D7D96 /* BoxCast tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BoxCast tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		41895383248C243B0017D2A1 /* Demo (tvOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo (tvOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		41895385248C243B0017D2A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		41895387248C243B0017D2A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4189538A248C243B0017D2A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4189538C248C243D0017D2A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4189538F248C243D0017D2A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		41895391248C243D0017D2A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41895395248C26030017D2A1 /* BroadcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastViewController.swift; sourceTree = "<group>"; };
 		419665261F2B9FC500CBB9A8 /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		41C5C8F91ECC7EF500EFD295 /* BoxCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BoxCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C5C9121ECC7F8C00EFD295 /* BoxCast macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BoxCast macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,7 +219,7 @@
 		41FB6D2F1EC77DD700C9EC8C /* QueryBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryBuilder.swift; sourceTree = "<group>"; };
 		41FB6D311EC7812800C9EC8C /* BroadcastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastView.swift; sourceTree = "<group>"; };
 		41FB6D351EC78AD300C9EC8C /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		41FB6D3B1EC78D9100C9EC8C /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41FB6D3B1EC78D9100C9EC8C /* Demo (iOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo (iOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41FB6D3D1EC78D9100C9EC8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41FB6D3F1EC78D9100C9EC8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		41FB6D421EC78D9100C9EC8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -210,6 +251,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4156C7082489340C009D7D96 /* BoxCast.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41895380248C243B0017D2A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41650FA7248C296B00328288 /* BoxCast.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +319,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		41895384248C243B0017D2A1 /* Demo (tvOS) */ = {
+			isa = PBXGroup;
+			children = (
+				41895385248C243B0017D2A1 /* AppDelegate.swift */,
+				4189538C248C243D0017D2A1 /* Assets.xcassets */,
+				41895395248C26030017D2A1 /* BroadcastViewController.swift */,
+				41895391248C243D0017D2A1 /* Info.plist */,
+				4189538E248C243D0017D2A1 /* LaunchScreen.storyboard */,
+				41895389248C243B0017D2A1 /* Main.storyboard */,
+				41895387248C243B0017D2A1 /* ViewController.swift */,
+			);
+			path = "Demo (tvOS)";
+			sourceTree = "<group>";
+		};
 		41D18B2D1F4C716300D460BC /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,7 +357,8 @@
 			children = (
 				41FB6D161EC76D8100C9EC8C /* Source */,
 				41FB6D171EC76D9A00C9EC8C /* Tests */,
-				41FB6D3C1EC78D9100C9EC8C /* Demo */,
+				41FB6D3C1EC78D9100C9EC8C /* Demo (iOS) */,
+				41895384248C243B0017D2A1 /* Demo (tvOS) */,
 				41FB6CFD1EC76C8500C9EC8C /* Products */,
 				4156C7072489340C009D7D96 /* Frameworks */,
 			);
@@ -305,11 +369,12 @@
 			children = (
 				41FB6CFC1EC76C8500C9EC8C /* BoxCast.framework */,
 				41FB6D051EC76C8500C9EC8C /* BoxCast iOS Tests.xctest */,
-				41FB6D3B1EC78D9100C9EC8C /* Demo.app */,
+				41FB6D3B1EC78D9100C9EC8C /* Demo (iOS).app */,
 				41C5C8F91ECC7EF500EFD295 /* BoxCast.framework */,
 				41C5C9121ECC7F8C00EFD295 /* BoxCast macOS Tests.xctest */,
 				4156C6D2248932CE009D7D96 /* BoxCast.framework */,
 				4156C6EE2489335F009D7D96 /* BoxCast tvOS Tests.xctest */,
+				41895383248C243B0017D2A1 /* Demo (tvOS).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -380,18 +445,18 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		41FB6D3C1EC78D9100C9EC8C /* Demo */ = {
+		41FB6D3C1EC78D9100C9EC8C /* Demo (iOS) */ = {
 			isa = PBXGroup;
 			children = (
 				41FB6D3D1EC78D9100C9EC8C /* AppDelegate.swift */,
-				41FB6D611EC797C400C9EC8C /* BroadcastViewController.swift */,
-				41FB6D3F1EC78D9100C9EC8C /* ViewController.swift */,
-				41FB6D411EC78D9100C9EC8C /* Main.storyboard */,
 				41FB6D441EC78D9100C9EC8C /* Assets.xcassets */,
-				41FB6D461EC78D9100C9EC8C /* LaunchScreen.storyboard */,
+				41FB6D611EC797C400C9EC8C /* BroadcastViewController.swift */,
 				41FB6D491EC78D9100C9EC8C /* Info.plist */,
+				41FB6D461EC78D9100C9EC8C /* LaunchScreen.storyboard */,
+				41FB6D411EC78D9100C9EC8C /* Main.storyboard */,
+				41FB6D3F1EC78D9100C9EC8C /* ViewController.swift */,
 			);
-			path = Demo;
+			path = "Demo (iOS)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,6 +524,25 @@
 			productName = "BoxCast tvOS Tests";
 			productReference = 4156C6EE2489335F009D7D96 /* BoxCast tvOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		41895382248C243B0017D2A1 /* Demo (tvOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41895392248C243D0017D2A1 /* Build configuration list for PBXNativeTarget "Demo (tvOS)" */;
+			buildPhases = (
+				4189537F248C243B0017D2A1 /* Sources */,
+				41895380248C243B0017D2A1 /* Frameworks */,
+				41895381248C243B0017D2A1 /* Resources */,
+				41650FAB248C296B00328288 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41650FAA248C296B00328288 /* PBXTargetDependency */,
+			);
+			name = "Demo (tvOS)";
+			productName = "Demo (tvOS)";
+			productReference = 41895383248C243B0017D2A1 /* Demo (tvOS).app */;
+			productType = "com.apple.product-type.application";
 		};
 		41C5C8F81ECC7EF500EFD295 /* BoxCast macOS */ = {
 			isa = PBXNativeTarget;
@@ -532,9 +616,9 @@
 			productReference = 41FB6D051EC76C8500C9EC8C /* BoxCast iOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		41FB6D3A1EC78D9100C9EC8C /* Demo */ = {
+		41FB6D3A1EC78D9100C9EC8C /* Demo (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 41FB6D4A1EC78D9100C9EC8C /* Build configuration list for PBXNativeTarget "Demo" */;
+			buildConfigurationList = 41FB6D4A1EC78D9100C9EC8C /* Build configuration list for PBXNativeTarget "Demo (iOS)" */;
 			buildPhases = (
 				41FB6D371EC78D9100C9EC8C /* Sources */,
 				41FB6D381EC78D9100C9EC8C /* Frameworks */,
@@ -544,10 +628,11 @@
 			buildRules = (
 			);
 			dependencies = (
+				41650FA6248C28C100328288 /* PBXTargetDependency */,
 			);
-			name = Demo;
+			name = "Demo (iOS)";
 			productName = Demo;
-			productReference = 41FB6D3B1EC78D9100C9EC8C /* Demo.app */;
+			productReference = 41FB6D3B1EC78D9100C9EC8C /* Demo (iOS).app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -565,6 +650,10 @@
 						ProvisioningStyle = Automatic;
 					};
 					4156C6ED2489335F009D7D96 = {
+						CreatedOnToolsVersion = 11.5;
+						ProvisioningStyle = Automatic;
+					};
+					41895382248C243B0017D2A1 = {
 						CreatedOnToolsVersion = 11.5;
 						ProvisioningStyle = Automatic;
 					};
@@ -619,7 +708,8 @@
 				41C5C9111ECC7F8C00EFD295 /* BoxCast macOS Tests */,
 				4156C6D1248932CE009D7D96 /* BoxCast tvOS */,
 				4156C6ED2489335F009D7D96 /* BoxCast tvOS Tests */,
-				41FB6D3A1EC78D9100C9EC8C /* Demo */,
+				41FB6D3A1EC78D9100C9EC8C /* Demo (iOS) */,
+				41895382248C243B0017D2A1 /* Demo (tvOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -640,6 +730,16 @@
 				4156C705248933C7009D7D96 /* LiveBroadcasts.json in Resources */,
 				4156C703248933C7009D7D96 /* ArchivedBroadcasts.json in Resources */,
 				4156C704248933C7009D7D96 /* Broadcast.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41895381248C243B0017D2A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41895390248C243D0017D2A1 /* LaunchScreen.storyboard in Resources */,
+				4189538D248C243D0017D2A1 /* Assets.xcassets in Resources */,
+				4189538B248C243B0017D2A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,6 +828,16 @@
 				4156C6FA248933C0009D7D96 /* BroadcastRoutesTests.swift in Sources */,
 				4156C6FB248933C0009D7D96 /* BroadcastViewRoutesTests.swift in Sources */,
 				4156C6FC248933C0009D7D96 /* DeviceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4189537F248C243B0017D2A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41895388248C243B0017D2A1 /* ViewController.swift in Sources */,
+				41895396248C26030017D2A1 /* BroadcastViewController.swift in Sources */,
+				41895386248C243B0017D2A1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -827,6 +937,16 @@
 			target = 4156C6D1248932CE009D7D96 /* BoxCast tvOS */;
 			targetProxy = 4156C6F42489335F009D7D96 /* PBXContainerItemProxy */;
 		};
+		41650FA6248C28C100328288 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41FB6CFB1EC76C8500C9EC8C /* BoxCast iOS */;
+			targetProxy = 41650FA5248C28C100328288 /* PBXContainerItemProxy */;
+		};
+		41650FAA248C296B00328288 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4156C6D1248932CE009D7D96 /* BoxCast tvOS */;
+			targetProxy = 41650FA9248C296B00328288 /* PBXContainerItemProxy */;
+		};
 		41C5C9191ECC7F8C00EFD295 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 41C5C8F81ECC7EF500EFD295 /* BoxCast macOS */;
@@ -840,6 +960,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		41895389248C243B0017D2A1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4189538A248C243B0017D2A1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4189538E248C243D0017D2A1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4189538F248C243D0017D2A1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		41FB6D411EC78D9100C9EC8C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -952,6 +1088,49 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 13.4;
+			};
+			name = Release;
+		};
+		41895393248C243D0017D2A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Demo (tvOS)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.boxcast.boxcast-sdk-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		41895394248C243D0017D2A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Demo (tvOS)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.boxcast.boxcast-sdk-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Release;
 		};
@@ -1230,7 +1409,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4DR4Q6A8AY;
-				INFOPLIST_FILE = Demo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Demo (iOS)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.boxcast.boxcast-sdk-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1244,7 +1423,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4DR4Q6A8AY;
-				INFOPLIST_FILE = Demo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Demo (iOS)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.boxcast.boxcast-sdk-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1269,6 +1448,15 @@
 			buildConfigurations = (
 				4156C6F72489335F009D7D96 /* Debug */,
 				4156C6F82489335F009D7D96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41895392248C243D0017D2A1 /* Build configuration list for PBXNativeTarget "Demo (tvOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41895393248C243D0017D2A1 /* Debug */,
+				41895394248C243D0017D2A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1318,7 +1506,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		41FB6D4A1EC78D9100C9EC8C /* Build configuration list for PBXNativeTarget "Demo" */ = {
+		41FB6D4A1EC78D9100C9EC8C /* Build configuration list for PBXNativeTarget "Demo (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				41FB6D4B1EC78D9100C9EC8C /* Debug */,
