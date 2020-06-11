@@ -114,7 +114,7 @@
     },
     {
       "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Models/Broadcast.swift",
-      "line": 81,
+      "line": 77,
       "symbol": "BroadcastList",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"

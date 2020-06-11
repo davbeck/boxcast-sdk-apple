@@ -28,7 +28,7 @@ class InfoPlistTests: XCTestCase {
     }
     
     func testBoxCastSDKVersion() {
-        XCTAssertEqual(InfoPlist.boxCastSDKVersion, "0.5.1")
+        XCTAssertEqual(InfoPlist.boxCastSDKVersion, "0.5.2")
     }
     
 }
