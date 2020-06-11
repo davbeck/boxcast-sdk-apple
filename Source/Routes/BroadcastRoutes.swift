@@ -11,11 +11,22 @@ import Foundation
 extension BoxCastClient {
     
     private enum Timeframe: String {
+        case upcoming = "future"
         case live = "current"
+        case preroll = "preroll"
         case past = "past"
     }
     
     // MARK: - Accessing Broadcasts
+    
+    /// Returns a list of upcoming broadcasts for a specific channel.
+    ///
+    /// - Parameters:
+    ///   - channelId: The channel id.
+    ///   - completionHandler: The handler to be called upon completion.
+    public func getUpcomingBroadcasts(channelId: String, completionHandler: @escaping ((BroadcastList?, Error?) -> Void)) {
+        findBroadcasts(channelId: channelId, timeframes: [.upcoming], completionHandler: completionHandler)
+    }
     
     /// Returns a list of live broadcasts for a specific channel.
     ///
@@ -23,7 +34,7 @@ extension BoxCastClient {
     ///   - channelId: The channel id.
     ///   - completionHandler: The handler to be called upon completion.
     public func getLiveBroadcasts(channelId: String, completionHandler: @escaping ((BroadcastList?, Error?) -> Void)) {
-        findBroadcasts(channelId: channelId, timeframe: .live, completionHandler: completionHandler)
+        findBroadcasts(channelId: channelId, timeframes: [.live, .preroll], completionHandler: completionHandler)
     }
     
     /// Returns a list of archived broadcasts for a specific channel.
@@ -32,7 +43,7 @@ extension BoxCastClient {
     ///   - channelId: The channel id.
     ///   - completionHandler: The handler to be called upon completion.
     public func getArchivedBroadcasts(channelId: String, completionHandler: @escaping ((BroadcastList?, Error?) -> Void)) {
-        findBroadcasts(channelId: channelId, timeframe: .past, completionHandler: completionHandler)
+        findBroadcasts(channelId: channelId, timeframes: [.past], completionHandler: completionHandler)
     }
     
     /// Returns a detailed broadcast.
@@ -58,11 +69,13 @@ extension BoxCastClient {
     
     // MARK: - Private
     
-    private func findBroadcasts(channelId: String, timeframe: Timeframe,
+    private func findBroadcasts(channelId: String, timeframes: [Timeframe],
                                 completionHandler: @escaping (([Broadcast]?, Error?) -> Void)) {
         // Build the query.
         let query = QueryBuilder()
-        query.appendWithLogic(.or, key: "timeframe", value: timeframe.rawValue)
+        for t in timeframes {
+            query.appendWithLogic(.or, key: "timeframe", value: t.rawValue)
+        }
         let params = [
             "q" : query.build()
         ]

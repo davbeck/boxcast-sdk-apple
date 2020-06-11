@@ -34,7 +34,7 @@ class BroadcastRoutesTests: MockedClientTestCase {
         }
         
         XCTAssertNotNil(url)
-        XCTAssertEqual(url?.query?.removingPercentEncoding, "q=timeframe:current")
+        XCTAssertEqual(url?.query?.removingPercentEncoding, "q=timeframe:current timeframe:preroll")
     }
     
     func testGetArchivedBroadcasts() {

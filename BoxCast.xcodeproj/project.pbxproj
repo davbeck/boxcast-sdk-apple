@@ -56,7 +56,6 @@
 		41650FA7248C296B00328288 /* BoxCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4156C6D2248932CE009D7D96 /* BoxCast.framework */; };
 		41650FA8248C296B00328288 /* BoxCast.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4156C6D2248932CE009D7D96 /* BoxCast.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		41895386248C243B0017D2A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41895385248C243B0017D2A1 /* AppDelegate.swift */; };
-		41895388248C243B0017D2A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41895387248C243B0017D2A1 /* ViewController.swift */; };
 		4189538B248C243B0017D2A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41895389248C243B0017D2A1 /* Main.storyboard */; };
 		4189538D248C243D0017D2A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4189538C248C243D0017D2A1 /* Assets.xcassets */; };
 		41895390248C243D0017D2A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4189538E248C243D0017D2A1 /* LaunchScreen.storyboard */; };
@@ -93,6 +92,7 @@
 		41D18B3E1F4C7A8000D460BC /* Broadcast.json in Resources */ = {isa = PBXBuildFile; fileRef = 41D18B361F4C7A6900D460BC /* Broadcast.json */; };
 		41D18B401F4C7B2D00D460BC /* View.json in Resources */ = {isa = PBXBuildFile; fileRef = 41D18B3F1F4C7B2D00D460BC /* View.json */; };
 		41D18B411F4C7B2D00D460BC /* View.json in Resources */ = {isa = PBXBuildFile; fileRef = 41D18B3F1F4C7B2D00D460BC /* View.json */; };
+		41F723B4249271DD0011E7D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB6D3F1EC78D9100C9EC8C /* ViewController.swift */; };
 		41FB6D061EC76C8500C9EC8C /* BoxCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FB6CFC1EC76C8500C9EC8C /* BoxCast.framework */; };
 		41FB6D271EC771DA00C9EC8C /* BoxCast.h in Headers */ = {isa = PBXBuildFile; fileRef = 41FB6D251EC771DA00C9EC8C /* BoxCast.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41FB6D2A1EC7720300C9EC8C /* BoxCastClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB6D291EC7720300C9EC8C /* BoxCastClient.swift */; };
@@ -195,7 +195,6 @@
 		4156C6EE2489335F009D7D96 /* BoxCast tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BoxCast tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41895383248C243B0017D2A1 /* Demo (tvOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo (tvOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41895385248C243B0017D2A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		41895387248C243B0017D2A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4189538A248C243B0017D2A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4189538C248C243D0017D2A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4189538F248C243D0017D2A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -328,7 +327,6 @@
 				41895391248C243D0017D2A1 /* Info.plist */,
 				4189538E248C243D0017D2A1 /* LaunchScreen.storyboard */,
 				41895389248C243B0017D2A1 /* Main.storyboard */,
-				41895387248C243B0017D2A1 /* ViewController.swift */,
 			);
 			path = "Demo (tvOS)";
 			sourceTree = "<group>";
@@ -835,8 +833,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41895388248C243B0017D2A1 /* ViewController.swift in Sources */,
 				41895396248C26030017D2A1 /* BroadcastViewController.swift in Sources */,
+				41F723B4249271DD0011E7D9 /* ViewController.swift in Sources */,
 				41895386248C243B0017D2A1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1099,6 +1097,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Demo (tvOS)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1121,6 +1120,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Demo (tvOS)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

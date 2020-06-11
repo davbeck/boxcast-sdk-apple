@@ -12,6 +12,7 @@ import BoxCast
 class ViewController: UITableViewController {
     
     let channelId = "YOUR_CHANNEL_ID"
+    var upcomingBroadcasts: BroadcastList = []
     var liveBroadcasts: BroadcastList = []
     var archivedBroadcasts: BroadcastList = []
 
@@ -36,10 +37,11 @@ class ViewController: UITableViewController {
         }
         
         var broadcast: Broadcast
-        if indexPath.section == 0 {
-            broadcast = liveBroadcasts[indexPath.row]
-        } else {
-            broadcast = archivedBroadcasts[indexPath.row]
+        switch indexPath.section {
+        case 0: broadcast = upcomingBroadcasts[indexPath.row]
+        case 1: broadcast = liveBroadcasts[indexPath.row]
+        case 2: broadcast = archivedBroadcasts[indexPath.row]
+        default: fatalError()
         }
         
         if let controller = segue.destination as? BroadcastViewController {
@@ -50,32 +52,35 @@ class ViewController: UITableViewController {
     // MARK: UITableViewController
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return liveBroadcasts.count
-        } else {
-            return archivedBroadcasts.count
+        switch section {
+        case 0: return upcomingBroadcasts.count
+        case 1: return liveBroadcasts.count
+        case 2: return archivedBroadcasts.count
+        default: fatalError()
         }
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "Live Broadcasts"
-        } else {
-            return "Archived Broadcasts"
+        switch section {
+        case 0: return "Upcoming"
+        case 1: return "Live"
+        case 2: return "Archived"
+        default: fatalError()
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         var broadcast: Broadcast
-        if indexPath.section == 0 {
-            broadcast = liveBroadcasts[indexPath.row]
-        } else {
-            broadcast = archivedBroadcasts[indexPath.row]
+        switch indexPath.section {
+        case 0: broadcast = upcomingBroadcasts[indexPath.row]
+        case 1: broadcast = liveBroadcasts[indexPath.row]
+        case 2: broadcast = archivedBroadcasts[indexPath.row]
+        default: fatalError()
         }
         cell.textLabel?.text = broadcast.name
         return cell
@@ -91,6 +96,15 @@ class ViewController: UITableViewController {
     private func loadBroadcasts() {
         guard channelId != "YOUR_CHANNEL_ID" else {
             fatalError("Set channelId at the top of this file to load valid broadcasts.")
+        }
+        
+        BoxCastClient.sharedClient?.getUpcomingBroadcasts(channelId: channelId) { upcomingBroadcasts, error in
+            if let upcoming = upcomingBroadcasts {
+                self.upcomingBroadcasts = upcoming
+                self.tableView.reloadData()
+            } else {
+                print("error loading upcoming broadcasts: \(error!.localizedDescription)")
+            }
         }
         
         BoxCastClient.sharedClient?.getLiveBroadcasts(channelId: channelId) { liveBroadcasts, error in

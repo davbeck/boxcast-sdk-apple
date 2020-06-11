@@ -21,7 +21,7 @@ public struct Broadcast {
     public let description: String
     
     /// The image URL for the thumbnail of the broadcast.
-    public let thumbnailURL: URL
+    public let thumbnailURL: URL?
     
     /// The channel's unique identifier that includes this broadcast.
     public let channelId: String
@@ -53,13 +53,9 @@ public struct Broadcast {
             let id = dict["id"] as? String,
             let name = dict["name"] as? String,
             let description = dict["description"] as? String,
-            let thumbnailURLString = dict["preview"] as? String,
             let startDateString = dict["starts_at"] as? String,
             let stopDateString = dict["stops_at"] as? String else {
                 throw BoxCastError.serializationError
-        }
-        guard let thumbnailURL = URL(string: thumbnailURLString) else {
-            throw BoxCastError.serializationError
         }
         guard
             let startDate = _BoxCastDateFormatter.date(from: startDateString),
@@ -71,9 +67,9 @@ public struct Broadcast {
         self.channelId = channelId
         self.name = name
         self.description = description
-        self.thumbnailURL = thumbnailURL
         self.startDate = startDate
         self.stopDate = stopDate
+        self.thumbnailURL = URL(string: (dict["preview"] as? String ?? ""))
     }
     
 }
