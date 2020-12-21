@@ -38,7 +38,7 @@ script:
 
   # Build Demo in Debug if specified
   - if [ $BUILD_DEMO == "YES" ]; then
-      xcodebuild -project "$PROJECT" -scheme "$DEMO_SCHEME" -destination "$DESTINATION" -configuration Debug build | xcpretty;
+      xcodebuild -project "$PROJECT" -scheme "$DEMO_SCHEME" -configuration Debug build | xcpretty;
     fi
 
   # Run `pod lib lint` if specified
