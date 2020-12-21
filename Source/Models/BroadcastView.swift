@@ -10,7 +10,8 @@ import Foundation
 
 /// The struct that represents a view of the BoxCast broadcast.
 public struct BroadcastView {
-    
+
+    /// Enum representing the status of the view.
     public enum Status {
         case upcoming
         case preparing
@@ -24,7 +25,9 @@ public struct BroadcastView {
         case recorded
     }
     
+    /// The status of the view.
     public let status: Status
+
     let playlistURL: URL?
     
     init(status: Status, playlistURL: URL?=nil) {
