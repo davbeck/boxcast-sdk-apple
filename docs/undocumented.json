@@ -118,6 +118,76 @@
       "symbol": "BroadcastList",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Models/BroadcastView.swift",
+      "line": 16,
+      "symbol": "BroadcastView.Status.upcoming",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Models/BroadcastView.swift",
+      "line": 17,
+      "symbol": "BroadcastView.Status.preparing",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Models/BroadcastView.swift",
+      "line": 18,
+      "symbol": "BroadcastView.Status.prepared",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Models/BroadcastView.swift",
+      "line": 19,
+      "symbol": "BroadcastView.Status.catchingUp",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Models/BroadcastView.swift",
+      "line": 20,
+      "symbol": "BroadcastView.Status.stalled",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Models/BroadcastView.swift",
+      "line": 21,
+      "symbol": "BroadcastView.Status.stalledLive",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Models/BroadcastView.swift",
+      "line": 22,
+      "symbol": "BroadcastView.Status.live",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Models/BroadcastView.swift",
+      "line": 23,
+      "symbol": "BroadcastView.Status.notRecorded",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Models/BroadcastView.swift",
+      "line": 24,
+      "symbol": "BroadcastView.Status.processingRecording",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple/Source/Models/BroadcastView.swift",
+      "line": 25,
+      "symbol": "BroadcastView.Status.recorded",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/camdenfullmer/Workspace/boxcast-sdk-apple"
