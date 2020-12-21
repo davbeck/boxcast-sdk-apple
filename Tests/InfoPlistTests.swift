@@ -20,7 +20,7 @@ class InfoPlistTests: XCTestCase {
     }
     
     func testAppBuild() {
-        XCTAssertEqual(InfoPlist.appBuild, "16091")
+        XCTAssertEqual(InfoPlist.appBuild, "17501")
     }
     
     func testAppBundleIdentifier() {
