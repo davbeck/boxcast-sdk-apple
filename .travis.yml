@@ -12,7 +12,7 @@ env:
     - IOS_FRAMEWORK_SCHEME="BoxCast iOS"
     - MACOS_FRAMEWORK_SCHEME="BoxCast macOS"
     - TVOS_FRAMEWORK_SCHEME="BoxCast tvOS"
-    - DEMO_SCHEME="Demo"
+    - DEMO_SCHEME="Demo (iOS)"
   matrix:
     - DESTINATION="OS=latest,name=iPhone 12"         SCHEME="$IOS_FRAMEWORK_SCHEME"      RUN_TESTS="YES" BUILD_DEMO="YES" POD_LINT="YES"
     - DESTINATION="arch=x86_64"                      SCHEME="$MACOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES" BUILD_DEMO="NO"  POD_LINT="NO"
