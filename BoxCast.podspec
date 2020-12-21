@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.license = 'MIT'
   s.summary = 'BoxCast is a SDK for integrating with the BoxCast API on Apple platforms.'
   s.homepage = 'https://github.com/boxcast/boxcast-sdk-apple'
-  s.social_media_url = 'http://twitter.com/boxcast'
+  s.social_media_url = 'https://twitter.com/boxcast'
   s.authors = { 'Camden Fullmer' => 'camden.fullmer@boxcast.com' }
 
   s.source = { git: 'https://github.com/boxcast/boxcast-sdk-apple.git', tag: s.version }
