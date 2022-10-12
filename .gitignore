@@ -34,12 +34,11 @@ xcuserdata/
 timeline.xctimeline
 playground.xcworkspace
 
-# Swift Package Manager
-#
-# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
-# Package.pins
+## Swift Package Manager
 .build/
+Packages/
+*.xcodeproj
+.swiftpm/
 
 # CocoaPods
 #

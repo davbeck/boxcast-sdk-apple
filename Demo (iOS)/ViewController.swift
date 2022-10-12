@@ -10,7 +10,8 @@ import UIKit
 import BoxCast
 
 class ViewController: UITableViewController {
-    
+
+    /// replace this with a Channel ID that includes public broadcast
     let channelId = "YOUR_CHANNEL_ID"
     var upcomingBroadcasts: BroadcastList = []
     var liveBroadcasts: BroadcastList = []

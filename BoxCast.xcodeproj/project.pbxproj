@@ -235,6 +235,8 @@
 		41FB6D6F1EC9EF5900C9EC8C /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		41FB6D721EC9FB7500C9EC8C /* MockedURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockedURLProtocol.swift; sourceTree = "<group>"; };
 		41FB6D741ECA482C00C9EC8C /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
+		6B58D55327BEFC6F000611F9 /* toemat_bx_sdk_apple */ = {isa = PBXFileReference; lastKnownFileType = folder; name = toemat_bx_sdk_apple; path = ../toemat_bx_sdk_apple; sourceTree = "<group>"; };
+		6B58D55427BEFCEC000611F9 /* toemat_bx_sdk_apple */ = {isa = PBXFileReference; lastKnownFileType = folder; name = toemat_bx_sdk_apple; path = ../toemat_bx_sdk_apple; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,6 +355,7 @@
 		41FB6CF21EC76C8500C9EC8C = {
 			isa = PBXGroup;
 			children = (
+				6B58D55227BEFC6F000611F9 /* Packages */,
 				41FB6D161EC76D8100C9EC8C /* Source */,
 				41FB6D171EC76D9A00C9EC8C /* Tests */,
 				41FB6D3C1EC78D9100C9EC8C /* Demo (iOS) */,
@@ -455,6 +458,15 @@
 				41FB6D3F1EC78D9100C9EC8C /* ViewController.swift */,
 			);
 			path = "Demo (iOS)";
+			sourceTree = "<group>";
+		};
+		6B58D55227BEFC6F000611F9 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				6B58D55327BEFC6F000611F9 /* toemat_bx_sdk_apple */,
+				6B58D55427BEFCEC000611F9 /* toemat_bx_sdk_apple */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -696,6 +708,8 @@
 				Base,
 			);
 			mainGroup = 41FB6CF21EC76C8500C9EC8C;
+			packageReferences = (
+			);
 			productRefGroup = 41FB6CFD1EC76C8500C9EC8C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
