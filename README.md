@@ -77,6 +77,14 @@ $ pod install
 	$(SRCROOT)/Carthage/Build/iOS/BoxCast.framework
 	```
 
+### Swift Package Manager
+SPM is a dependency manager built in to Xcode. Add this package using the url:
+
+```
+https://github.com/boxcast/boxcast-sdk-apple
+```
+
+
 ## Usage
 
 Before you get started make sure to grab the id of the channel you want to get broadcasts from. This can be found on your [BoxCast Dashboard](https://dashboard.boxcast.com/#/channels).
