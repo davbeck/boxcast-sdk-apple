@@ -25,7 +25,16 @@ public struct Broadcast {
 
 	let accountId: String?
 
-	init(id: String, name: String, description: String, thumbnailURL: URL, startDate: Date, stopDate: Date, channelId: String, accountId: String? = nil) {
+	public init(
+		id: String,
+		name: String,
+		description: String,
+		thumbnailURL: URL,
+		startDate: Date,
+		stopDate: Date,
+		channelId: String,
+		accountId: String? = nil
+	) {
 		self.id = id
 		self.name = name
 		self.description = description
