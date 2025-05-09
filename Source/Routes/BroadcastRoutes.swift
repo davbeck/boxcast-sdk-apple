@@ -15,7 +15,7 @@ public extension BoxCastClient {
 	/// - Parameters:
 	///   - channelId: The channel id.
 	///   - completionHandler: The handler to be called upon completion.
-	func getUpcomingBroadcasts(channelId: String, completionHandler: @escaping ((BroadcastList?, Error?) -> Void)) {
+	func getUpcomingBroadcasts(channelId: String, completionHandler: @escaping (@Sendable (BroadcastList?, Error?) -> Void)) {
 		findBroadcasts(channelId: channelId, timeframes: [.upcoming], completionHandler: completionHandler)
 	}
 
@@ -43,7 +43,7 @@ public extension BoxCastClient {
 	/// - Parameters:
 	///   - channelId: The channel id.
 	///   - completionHandler: The handler to be called upon completion.
-	func getLiveBroadcasts(channelId: String, completionHandler: @escaping ((BroadcastList?, Error?) -> Void)) {
+	func getLiveBroadcasts(channelId: String, completionHandler: @escaping (@Sendable (BroadcastList?, Error?) -> Void)) {
 		findBroadcasts(channelId: channelId, timeframes: [.live, .preroll], completionHandler: completionHandler)
 	}
 
@@ -71,7 +71,7 @@ public extension BoxCastClient {
 	/// - Parameters:
 	///   - channelId: The channel id.
 	///   - completionHandler: The handler to be called upon completion.
-	func getArchivedBroadcasts(channelId: String, completionHandler: @escaping ((BroadcastList?, Error?) -> Void)) {
+	func getArchivedBroadcasts(channelId: String, completionHandler: @escaping (@Sendable (BroadcastList?, Error?) -> Void)) {
 		findBroadcasts(channelId: channelId, timeframes: [.past], completionHandler: completionHandler)
 	}
 
@@ -99,7 +99,7 @@ public extension BoxCastClient {
 	///   - broadcastId: The broadcast id.
 	///   - channelId: The channel id.
 	///   - completionHandler: The handler to be called upon completion.
-	func getBroadcast(broadcastId: String, channelId: String, completionHandler: @escaping ((Broadcast?, Error?) -> Void)) {
+	func getBroadcast(broadcastId: String, channelId: String, completionHandler: @escaping (@Sendable (Broadcast?, Error?) -> Void)) {
 		getJSON(for: "/broadcasts/\(broadcastId)") { json, error in
 			if let json {
 				do {
@@ -138,7 +138,7 @@ public extension BoxCastClient {
 
 	private func findBroadcasts(
 		channelId: String, timeframes: [Timeframe],
-		completionHandler: @escaping (([Broadcast]?, Error?) -> Void)
+		completionHandler: @escaping (@Sendable ([Broadcast]?, Error?) -> Void)
 	) {
 		// Build the query.
 		let query = QueryBuilder()

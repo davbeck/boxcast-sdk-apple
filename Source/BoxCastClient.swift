@@ -31,36 +31,49 @@ public class BoxCastClient {
 
 	// MARK: - Request
 
-	public func getJSON(for path: String, parameters: [String: Any]? = nil, completionHandler: @escaping (Any?, Error?) -> Void) {
-		requestJSON(for: path, method: "GET", parameters: parameters,
-		            completionHandler: completionHandler)
+	public func getJSON(for path: String, parameters: [String: Any]? = nil, completionHandler: @Sendable @escaping (Any?, Error?) -> Void) {
+		requestJSON(
+			for: path, method: "GET", parameters: parameters,
+			completionHandler: completionHandler
+		)
 	}
 
-	public func postJSON(for path: String, parameters: [String: Any]?, completionHandler: @escaping (Any?, Error?) -> Void) {
-		requestJSON(for: path, method: "POST", parameters: parameters,
-		            completionHandler: completionHandler)
+	public func postJSON(for path: String, parameters: [String: Any]?, completionHandler: @Sendable @escaping (Any?, Error?) -> Void) {
+		requestJSON(
+			for: path, method: "POST", parameters: parameters,
+			completionHandler: completionHandler
+		)
 	}
 
-	public func putJSON(for path: String, parameters: [String: Any], completionHandler: @escaping (Any?, Error?) -> Void) {
-		requestJSON(for: path, method: "PUT", parameters: parameters,
-		            completionHandler: completionHandler)
+	public func putJSON(for path: String, parameters: [String: Any], completionHandler: @Sendable @escaping (Any?, Error?) -> Void) {
+		requestJSON(
+			for: path, method: "PUT", parameters: parameters,
+			completionHandler: completionHandler
+		)
 	}
 
-	public func post(path: String, parameters: [String: Any], completionHandler: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
-		request(url: "\(scope.apiURL)\(path)", method: "POST", parameters: parameters,
-		        completionHandler: completionHandler)
+	public func post(path: String, parameters: [String: Any], completionHandler: @Sendable @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
+		request(
+			url: "\(scope.apiURL)\(path)", method: "POST", parameters: parameters,
+			completionHandler: completionHandler
+		)
 	}
 
-	public func get(path: String, parameters: [String: Any], completionHandler: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
-		request(url: "\(scope.apiURL)\(path)", method: "GET", parameters: parameters,
-		        completionHandler: completionHandler)
+	public func get(path: String, parameters: [String: Any], completionHandler: @Sendable @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
+		request(
+			url: "\(scope.apiURL)\(path)", method: "GET", parameters: parameters,
+			completionHandler: completionHandler
+		)
 	}
 
-	public func delete(path: String, completionHandler: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
-		request(url: "\(scope.apiURL)\(path)", method: "DELETE", parameters: nil, completionHandler: completionHandler)
+	public func delete(path: String, completionHandler: @Sendable @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
+		request(
+			url: "\(scope.apiURL)\(path)", method: "DELETE", parameters: nil,
+			completionHandler: completionHandler
+		)
 	}
 
-	private func requestJSON(for path: String, method: String, parameters: [String: Any]?, completionHandler: @escaping (Any?, Error?) -> Void) {
+	private func requestJSON(for path: String, method: String, parameters: [String: Any]?, completionHandler: @Sendable @escaping (Any?, Error?) -> Void) {
 		request(url: "\(scope.apiURL)\(path)", method: method, parameters: parameters) { response, data, error in
 			if let error {
 				completionHandler(nil, error)
@@ -79,7 +92,7 @@ public class BoxCastClient {
 		}
 	}
 
-	private func request(url: String, method: String, parameters: [String: Any]?, completionHandler: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
+	private func request(url: String, method: String, parameters: [String: Any]?, completionHandler: @Sendable @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
 		guard let url = URL(string: url) else {
 			return completionHandler(nil, nil, BoxCastError.invalidURL)
 		}
@@ -113,22 +126,22 @@ public class BoxCastClient {
 		}
 		let task = session.dataTask(with: request) { data, response, error in
 			guard error == nil else {
-				DispatchQueue.main.async { completionHandler(nil, nil, error) }
+				completionHandler(nil, nil, error)
 				return
 			}
 			guard let response = response as? HTTPURLResponse else {
-				DispatchQueue.main.async { completionHandler(nil, nil, BoxCastError.unknown) }
+				completionHandler(nil, nil, BoxCastError.unknown)
 				return
 			}
 			guard response.statusCode >= 200 && response.statusCode < 300 else {
 				if let data, let error = BoxCastError(responseData: data) {
-					DispatchQueue.main.async { completionHandler(response, nil, error) }
+					completionHandler(response, nil, error)
 				} else {
-					DispatchQueue.main.async { completionHandler(response, nil, BoxCastError.unknown) }
+					completionHandler(response, nil, BoxCastError.unknown)
 				}
 				return
 			}
-			DispatchQueue.main.async { completionHandler(response, data, nil) }
+			completionHandler(response, data, nil)
 		}
 		task.resume()
 	}

@@ -8,7 +8,7 @@ public extension BoxCastClient {
 	/// - Parameters:
 	///   - broadcastId: The broadcast id.
 	///   - completionHandler: The handler to be called upon completion.
-	func getBroadcastView(broadcastId: String, completionHandler: @escaping ((BroadcastView?, Error?) -> Void)) {
+	func getBroadcastView(broadcastId: String, completionHandler: @escaping (@Sendable (BroadcastView?, Error?) -> Void)) {
 		getJSON(for: "/broadcasts/\(broadcastId)/view") { json, error in
 			if let json {
 				do {
@@ -22,7 +22,7 @@ public extension BoxCastClient {
 			}
 		}
 	}
-	
+
 	/// Returns a view for a specific broadcast.
 	/// - Parameter broadcastId: The broadcast id.
 	/// - Returns: The broadcast view info.

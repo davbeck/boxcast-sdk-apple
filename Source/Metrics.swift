@@ -171,7 +171,7 @@ class MetricsConsumer {
 
 	// MARK: - Private
 
-	private func postJSON(url: String, parameters: [String: Any], completionHandler: @escaping (Bool, Error?) -> Void) {
+	private func postJSON(url: String, parameters: [String: Any], completionHandler: @Sendable @escaping (Bool, Error?) -> Void) {
 		guard let url = URL(string: url) else {
 			return completionHandler(false, BoxCastError.invalidURL)
 		}
@@ -190,16 +190,16 @@ class MetricsConsumer {
 
 		let task = session.dataTask(with: request) { data, response, error in
 			guard error == nil else {
-				DispatchQueue.main.async { completionHandler(false, error) }
+				completionHandler(false, error)
 				return
 			}
 			guard let response = response as? HTTPURLResponse else {
-				DispatchQueue.main.async { completionHandler(false, BoxCastError.unknown) }
+				completionHandler(false, BoxCastError.unknown)
 				return
 			}
 			guard response.statusCode >= 200 && response.statusCode < 300 else {
 				// TODO: parse JSON for error object.
-				DispatchQueue.main.async { completionHandler(false, BoxCastError.unknown) }
+				completionHandler(false, BoxCastError.unknown)
 				return
 			}
 			DispatchQueue.main.async { completionHandler(true, nil) }
