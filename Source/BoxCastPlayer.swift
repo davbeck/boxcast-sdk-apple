@@ -34,8 +34,10 @@ public class BoxCastPlayer: AVPlayer {
 	}
 
 	deinit {
-		removeObservers()
-		stopIntervalTimer()
+		MainActor.assumeIsolated {
+			removeObservers()
+			stopIntervalTimer()
+		}
 	}
 
 	// MARK: - Key Value Observing
@@ -47,33 +49,35 @@ public class BoxCastPlayer: AVPlayer {
 			return
 		}
 
-		if keyPath == "rate" {
-			let currentTime = player.currentTime()
-			let rate = player.rate
-			var action: Metric.Action
-			var metric: Metric
+		MainActor.assumeIsolated {
+			if keyPath == "rate" {
+				let currentTime = player.currentTime()
+				let rate = player.rate
+				var action: Metric.Action
+				var metric: Metric
 
-			// TODO: Handle rates other than just 0 and 1?
-			if rate == 0 {
-				if let lastPlayTime {
-					totalTime = totalTime + (currentTime - lastPlayTime)
-					self.lastPlayTime = nil
-				}
-				if player.currentItem!.isPlaybackBufferEmpty {
-					action = .buffer
+				// TODO: Handle rates other than just 0 and 1?
+				if rate == 0 {
+					if let lastPlayTime {
+						totalTime = totalTime + (currentTime - lastPlayTime)
+						self.lastPlayTime = nil
+					}
+					if player.currentItem!.isPlaybackBufferEmpty {
+						action = .buffer
+					} else {
+						action = .pause
+					}
 				} else {
-					action = .pause
+					lastPlayTime = currentTime
+					if intervalTimer == nil {
+						createIntervalTimer()
+					}
+					action = .play
 				}
-			} else {
-				lastPlayTime = currentTime
-				if intervalTimer == nil {
-					createIntervalTimer()
-				}
-				action = .play
+				metric = Metric(action: action, time: currentTime, totalTime: totalTime,
+				                videoHeight: videoHeight)
+				send(metric: metric)
 			}
-			metric = Metric(action: action, time: currentTime, totalTime: totalTime,
-			                videoHeight: videoHeight)
-			send(metric: metric)
 		}
 	}
 

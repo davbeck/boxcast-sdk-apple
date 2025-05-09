@@ -1,9 +1,9 @@
 import Foundation
 
 /// The struct that represents a view of the BoxCast broadcast.
-public struct BroadcastView {
+public struct BroadcastView: Sendable {
 	/// Enum representing the status of the view.
-	public enum Status {
+	public enum Status: Sendable {
 		case upcoming
 		case preparing
 		case prepared

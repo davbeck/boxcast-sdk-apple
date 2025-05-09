@@ -1,7 +1,7 @@
 import Foundation
 
 /// The struct that represents a BoxCast broadcast.
-public struct Broadcast {
+public struct Broadcast: Sendable {
 	/// The unique identifier for the broadcast.
 	public let id: String
 
