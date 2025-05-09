@@ -2,9 +2,6 @@ import Foundation
 
 public struct PublicScope: BoxCastScopable {
 	public init() {}
-	public var isAuthorized: Bool {
-		true
-	}
 
 	public var apiURL: String {
 		"https://api.boxcast.com"
@@ -16,7 +13,6 @@ public struct PublicScope: BoxCastScopable {
 }
 
 public protocol BoxCastScopable {
-	var isAuthorized: Bool { get }
 	var apiURL: String { get }
 	var additionalHeaders: [String: String]? { get }
 }
@@ -31,13 +27,6 @@ public class BoxCastClient {
 	public init(scope: BoxCastScopable, configuration: URLSessionConfiguration = .default) {
 		self.scope = scope
 		session = URLSession(configuration: configuration)
-	}
-
-	// MARK: - Public
-
-	/// Returns a boolean indicating if the client is authorized.
-	public var isAuthorized: Bool {
-		scope.isAuthorized
 	}
 
 	// MARK: - Request
