@@ -53,7 +53,7 @@ public class BoxCastClient {
     /// The shared singleton object to be used for accessing resources.
     public static var sharedClient: BoxCastClient?
     
-    internal init(scope: BoxCastScopable, configuration: URLSessionConfiguration = .default) {
+    public init(scope: BoxCastScopable, configuration: URLSessionConfiguration = .default) {
         self.scope = scope
         session = URLSession(configuration: configuration)
     }
