@@ -28,24 +28,6 @@ public class BoxCastClient {
 	let session: URLSession
 	let scope: BoxCastScopable
 
-	// MARK: - Setup
-
-	/// Sets up the shared client. This must be called in order to use `sharedClient`.
-	///
-	/// - Parameter scope: The scope for the client. Defaults to the public scope.
-	public static func setUp(scope: BoxCastScopable = PublicScope(), configuration: URLSessionConfiguration = .default) {
-		guard sharedClient == nil else {
-			print("BoxCast has already been set up")
-			return
-		}
-		sharedClient = BoxCastClient(scope: scope, configuration: configuration)
-	}
-
-	// MARK: - Shared Instance
-
-	/// The shared singleton object to be used for accessing resources.
-	public static var sharedClient: BoxCastClient?
-
 	public init(scope: BoxCastScopable, configuration: URLSessionConfiguration = .default) {
 		self.scope = scope
 		session = URLSession(configuration: configuration)
