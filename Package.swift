@@ -14,6 +14,9 @@ let package = Package(
             name: "BoxCast",
             targets: ["BoxCast"]),
     ],
+	dependencies: [
+		.package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.55.0"),
+	],
     targets: [
         .target(
             name: "BoxCast",

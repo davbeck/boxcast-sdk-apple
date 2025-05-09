@@ -1,11 +1,3 @@
-//
-//  MockedClientTestCase.swift
-//  BoxCast
-//
-//  Created by Camden Fullmer on 8/22/17.
-//  Copyright © 2017 BoxCast, Inc. All rights reserved.
-//
-
 import XCTest
 @testable import BoxCast
 
